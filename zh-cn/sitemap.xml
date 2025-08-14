@@ -28,19 +28,7 @@
                 href="https://easthq.github.io/categories/"
                 />
   </url><url>
-    <loc>https://easthq.github.io/tags/css/</loc>
-    <lastmod>2025-08-14T13:23:36+08:00</lastmod>
-  </url><url>
-    <loc>https://easthq.github.io/tags/html/</loc>
-    <lastmod>2025-08-14T13:23:36+08:00</lastmod>
-  </url><url>
-    <loc>https://easthq.github.io/tags/markdown/</loc>
-    <lastmod>2025-08-14T13:23:36+08:00</lastmod>
-  </url><url>
     <loc>https://easthq.github.io/post/</loc>
-    <lastmod>2025-08-14T13:23:36+08:00</lastmod>
-  </url><url>
-    <loc>https://easthq.github.io/categories/syntax/</loc>
     <lastmod>2025-08-14T13:23:36+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/tags/</loc>
@@ -56,13 +44,22 @@
                 href="https://easthq.github.io/tags/"
                 />
   </url><url>
-    <loc>https://easthq.github.io/tags/themes/</loc>
+    <loc>https://easthq.github.io/tags/%E9%B2%81%E8%BF%85/</loc>
     <lastmod>2025-08-14T13:23:36+08:00</lastmod>
   </url><url>
-    <loc>https://easthq.github.io/p/%E6%A0%87%E9%A2%98/</loc>
+    <loc>https://easthq.github.io/tags/%E6%99%B4%E5%A4%A9/</loc>
     <lastmod>2025-08-14T13:23:36+08:00</lastmod>
   </url><url>
-    <loc>https://easthq.github.io/categories/%E4%B8%BB%E9%A2%98/</loc>
+    <loc>https://easthq.github.io/categories/%E6%96%87%E5%AD%A6/</loc>
+    <lastmod>2025-08-14T13:23:36+08:00</lastmod>
+  </url><url>
+    <loc>https://easthq.github.io/tags/%E6%96%87%E5%AD%A6/</loc>
+    <lastmod>2025-08-14T13:23:36+08:00</lastmod>
+  </url><url>
+    <loc>https://easthq.github.io/tags/%E4%B8%AD%E6%96%87/</loc>
+    <lastmod>2025-08-14T13:23:36+08:00</lastmod>
+  </url><url>
+    <loc>https://easthq.github.io/p/%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2025-08-14T13:23:36+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/p/test-chinese/</loc>
@@ -80,10 +77,25 @@
     <loc>https://easthq.github.io/page/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://easthq.github.io/tags/css/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://easthq.github.io/tags/html/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://easthq.github.io/tags/markdown/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://easthq.github.io/p/markdown-syntax-guide/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://easthq.github.io/categories/syntax/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://easthq.github.io/categories/themes/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://easthq.github.io/tags/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/tags/privacy/</loc>
