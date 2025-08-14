@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>主题 on 咸鱼的小站</title>
+        <link>https://easthq.github.io/categories/%E4%B8%BB%E9%A2%98/</link>
+        <description>Recent content in 主题 on 咸鱼的小站</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>smart fish</copyright>
+        <lastBuildDate>Thu, 14 Aug 2025 13:23:36 +0800</lastBuildDate><atom:link href="https://easthq.github.io/categories/%E4%B8%BB%E9%A2%98/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>标题</title>
+        <link>https://easthq.github.io/p/%E6%A0%87%E9%A2%98/</link>
+        <pubDate>Thu, 14 Aug 2025 13:23:36 +0800</pubDate>
+        
+        <guid>https://easthq.github.io/p/%E6%A0%87%E9%A2%98/</guid>
+        <description>&lt;h1 id=&#34;first&#34;&gt;first
+&lt;/h1&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
