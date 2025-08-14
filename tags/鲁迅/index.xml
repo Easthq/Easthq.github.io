@@ -32,8 +32,13 @@
     &lt;/iframe&gt;
 &lt;/div&gt;
 
-&lt;h1 id=&#34;first&#34;&gt;first
-&lt;/h1&gt;</description>
+&lt;h1 id=&#34;正文测试&#34;&gt;正文测试
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;这里有两棵树，
+一颗是枣树，
+另一颗也是枣树。
+&amp;ndash;鲁迅&lt;/p&gt;&lt;/blockquote&gt;
+</description>
         </item>
         
     </channel>
