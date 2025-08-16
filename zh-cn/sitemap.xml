@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://easthq.github.io/categories/</loc>
-    <lastmod>2025-08-16T03:23:35+08:00</lastmod>
+    <lastmod>2025-08-16T19:32:44+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,11 +15,17 @@
                 href="https://easthq.github.io/categories/"
                 />
   </url><url>
+    <loc>https://easthq.github.io/tags/hugo/</loc>
+    <lastmod>2025-08-16T19:32:44+08:00</lastmod>
+  </url><url>
+    <loc>https://easthq.github.io/p/hugo-help/</loc>
+    <lastmod>2025-08-16T19:32:44+08:00</lastmod>
+  </url><url>
     <loc>https://easthq.github.io/post/</loc>
-    <lastmod>2025-08-16T03:23:35+08:00</lastmod>
+    <lastmod>2025-08-16T19:32:44+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/tags/</loc>
-    <lastmod>2025-08-16T03:23:35+08:00</lastmod>
+    <lastmod>2025-08-16T19:32:44+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -31,23 +37,26 @@
                 href="https://easthq.github.io/tags/"
                 />
   </url><url>
+    <loc>https://easthq.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-08-16T19:32:44+08:00</lastmod>
+  </url><url>
     <loc>https://easthq.github.io/p/%E6%89%8B%E5%86%99%E7%9A%84%E4%BB%8E%E5%89%8D/</loc>
-    <lastmod>2025-08-16T03:23:35+08:00</lastmod>
+    <lastmod>2025-08-16T19:09:12+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/categories/%E5%91%A8%E6%9D%B0%E4%BC%A6/</loc>
-    <lastmod>2025-08-16T03:23:35+08:00</lastmod>
+    <lastmod>2025-08-16T19:09:12+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/tags/%E5%91%A8%E6%9D%B0%E4%BC%A6/</loc>
-    <lastmod>2025-08-16T03:23:35+08:00</lastmod>
+    <lastmod>2025-08-16T19:09:12+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/categories/%E6%96%87%E5%AD%A6/</loc>
-    <lastmod>2025-08-16T02:41:18+08:00</lastmod>
+    <lastmod>2025-08-16T19:09:12+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/tags/%E6%96%87%E5%AD%A6/</loc>
-    <lastmod>2025-08-16T02:41:18+08:00</lastmod>
+    <lastmod>2025-08-16T19:09:12+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/p/%E5%B0%8F%E8%AE%B0/</loc>
-    <lastmod>2025-08-16T02:12:51+08:00</lastmod>
+    <lastmod>2025-08-16T19:09:12+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/p/qq%E8%80%81%E5%B8%88%E7%9A%84%E6%99%B4%E5%A4%A9/</loc>
     <lastmod>2025-08-16T02:41:18+08:00</lastmod>
