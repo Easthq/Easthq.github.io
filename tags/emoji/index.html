@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://easthq.github.io/tags/emoji/'>
 
-<link rel="stylesheet" href="/scss/style.min.902578b43aaf1ca6f57d0aaa5332a3acc6057195765cc77648a43fa545df29ec.css"><meta property='og:title' content="Tag: Emoji - 咸鱼的小站">
+<link rel="stylesheet" href="/scss/style.min.ec5d49b8539eb9a01e71da776fdf3cac6bc81807a71905523db1b20e2c0283a0.css"><meta property='og:title' content="Tag: Emoji - 咸鱼的小站">
 <meta property='og:description' content="今天又偷偷更新...">
 <meta property='og:url' content='https://easthq.github.io/tags/emoji/'>
 <meta property='og:site_name' content='咸鱼的小站'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-08-16T19:32:44&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-08-17T23:01:27&#43;08:00 '/>
 <meta name="twitter:title" content="Tag: Emoji - 咸鱼的小站">
 <meta name="twitter:description" content="今天又偷偷更新..."><link rel="alternate" type="application/rss&#43;xml" href="https://easthq.github.io/tags/emoji/index.xml">
     <link rel="shortcut icon" href="/favicon.png" />
@@ -147,25 +147,6 @@
         
         
         <li >
-            <a href='/%E5%85%B3%E4%BA%8E/' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-
-
-                
-                <span>关于</span>
-            </a>
-        </li>
-        
-        
-        <li >
             <a href='/archives/' >
                 
                 
@@ -180,7 +161,7 @@
 
 
                 
-                <span>Archives</span>
+                <span>归档</span>
             </a>
         </li>
         
@@ -199,7 +180,7 @@
 
 
                 
-                <span>Search</span>
+                <span>搜索</span>
             </a>
         </li>
         
@@ -224,29 +205,6 @@
         
         <li class="menu-bottom-section">
             <ol class="menu">
-                    
-                        <li id="i18n-switch">  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 5h7" />
-  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
-  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
-  <path d="M12 20l4 -9l4 9" />
-  <path d="M19.1 18h-6.2" />
-</svg>
-
-
-
-                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
-                                
-                                    <option value="https://easthq.github.io/" selected>中文</option>
-                                
-                                    <option value="https://easthq.github.io/en/" >English</option>
-                                
-                            </select>
-                        </li>
-                    
-                
 
                 
                     <li id="dark-mode-toggle">
@@ -486,7 +444,7 @@
         <div class="article-details">
             <h2 class="article-title">Emoji Support</h2>
             <footer class="article-time">
-                <time datetime='2019-03-05T00:00:00Z'>Mar 05, 2019</time>
+                <time datetime='2019-03-05T00:00:00Z'>2019-3-5</time>
             </footer>
         </div>
             <div class="article-image">
@@ -535,5 +493,178 @@
     }());
 </script>
 
+<script defer src="https://cn.vercount.one/js"></script>
+
+
+<script>
+    function showHideView() {
+        
+        let viewCounts = document.querySelectorAll("#viewCount");
+        if (viewCounts) {
+            
+            let article =  document.querySelector(".article-page");
+            if (!article) {
+                viewCounts.forEach(ele => {
+                    ele.style.display = 'none';
+                });
+            }
+        }
+    }
+    
+    showHideView();
+</script>
+
+
+
+<style>
+  #backTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      z-index: 99;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      background-image: url(/icons/backTop.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.5;  
+       
+      transition: transform 1s ease-in-out;
+  }
+
+</style>
+
+<script>
+  
+
+  function initScrollTop() {
+      let rightSideBar = document.querySelector(".right-sidebar");
+      if (!rightSideBar) {
+          return;
+      }
+      
+      let btn = document.createElement("div");
+      btn.id = "backTopBtn";
+      btn.onclick = backToTop
+      rightSideBar.appendChild(btn)
+      
+      window.onscroll = function() {
+          
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              btn.style.display = "block";
+          } else {
+              btn.style.display = "none";
+          }
+      };
+  }
+
+  
+
+  function backToTop(){
+      window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
+  initScrollTop();
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<script>
+const staticDir = "https:\/\/easthq.github.io\/" + "music/";
+const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    lrcType: 3,
+    audio: [
+        {
+             name: '手写的从前', 
+             artist: '周杰伦', 
+             url: staticDir + '周杰伦/手写的从前/手写的从前.mp3', 
+             cover: staticDir + '周杰伦/手写的从前/cover.png', 
+             lrc: staticDir + '周杰伦/手写的从前/手写的从前.lrc',  
+        },
+        {
+             name: '才二十三+爱爱爱+苏丽珍+好不容易+Love Song+为你写的歌', 
+             artist: '卢广仲', 
+             url: staticDir + '卢广仲/卢广仲-才二十三+爱爱爱+苏丽珍+好不容易+Love Song+为你写的歌.mp3', 
+             cover: staticDir + '卢广仲/cover.png', 
+             lrc: staticDir + '卢广仲/lrc.lrc',  
+        },
+    ],
+    
+    fixed: true
+});
+</script>
+
+
+<script>
+    
+
+    window.onbeforeunload = () => {
+        
+        const playInfo = {
+            index: ap.list.index,
+            currentTime: ap.audio.currentTime,
+            paused: ap.paused
+        };
+        localStorage.setItem("playInfo", JSON.stringify(playInfo));
+    };
+
+    
+
+    window.onload = () => {
+        
+        const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+        if (!playInfo) {
+            return;
+        }
+        
+        ap.list.switch(playInfo.index);
+        
+        setTimeout(() => {
+            
+            ap.seek(playInfo.currentTime);
+            
+            if (!playInfo.paused) {
+                ap.play()
+            }
+        }, 500);
+    };
+</script>
+
+<style>
+   
+  #dark-mode-toggle {
+    position: fixed !important;
+    bottom: 90px !important;  
+    left: 20px !important;
+    z-index: 1001 !important;
+    background: var(--sidebar-bg-color) !important;  
+    border-radius: 50% !important;
+    padding: 10px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+   
+  #dark-mode-toggle span {
+    display: none !important;
+  }
+
+   
+  #dark-mode-toggle svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+</style>
     </body>
 </html>
