@@ -830,7 +830,50 @@ const ap = new APlayer({
     fixed: true
 });
 </script>
+<style>
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+  }
 
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-pic {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    transform: none !important;  
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-info {
+    display: none !important;
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-button {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 10 !important;
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    border: 2px solid var(--border-color) !important;
+  }
+
+   
+  #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-body {
+    width: 400px !important;  
+    height: auto !important;  
+    border-radius: 0 !important;  
+  }
+</style>
 
 <script>
     
