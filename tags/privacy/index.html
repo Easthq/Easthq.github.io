@@ -569,6 +569,7 @@
 const staticDir = "https:\/\/easthq.github.io\/" + "music/";
 const ap = new APlayer({
     container: document.getElementById('aplayer'),
+    bgColor: 'rgba(0, 0, 0, 1.0)',
     lrcType: 3,
     audio: [
         {
@@ -598,15 +599,51 @@ const ap = new APlayer({
     
     fixed: true
 });
+setTimeout(() => {
+  
+  if (ap && typeof ap.list !== 'undefined') {
+    ap.list.show(); 
+  }
+}, 500);
 </script>
 <style>
+   
+  #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-info {
+    
+    animation: fadeInUp 0.3s ease-out 0.1s both !important;
+  }
+
+  #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-controller {
+    animation: fadeInUp 0.3s ease-out 0.2s both !important;
+  }
+
+  #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-list {
+    animation: fadeInUp 0.3s ease-out 0.3s both !important;
+  }
+
+   
+  @keyframes fadeInUp {
+    from {
+      opacity: 1;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+   
+  #aplayer.aplayer-fixed .aplayer-body {
+    background-color: rgba(116, 115, 115, 0) !important;  
+         
+  }
+
    
   #aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
     width: 60px !important;
     height: 60px !important;
-    border-radius: 50% !important;
+    border-radius: 10% !important;
     overflow: hidden !important;
-     
   }
 
    
@@ -614,7 +651,7 @@ const ap = new APlayer({
     width: 100% !important;
     height: 100% !important;
     border-radius: 50% !important;
-    transform: none !important;  
+    transform: none !important;
   }
 
    
@@ -632,17 +669,48 @@ const ap = new APlayer({
   }
 
    
-  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-    border: 2px solid var(--border-color) !important;
+   
+  
+     
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-miniswitcher {
+     
+    position: absolute !important;
+     
+    background-color: rgba(0, 0, 0, 0) !important;
+     
   }
 
    
-  #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-body {
-    width: auto !important;  
-    height: auto !important;  
-    border-radius: 0 !important;  
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-miniswitcher svg {
+    width: 14px !important;
+    height: 14px !important;
+    fill: white !important;
+    opacity: 0.9 !important;
   }
+  
+   
+    #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-body {
+      width: auto !important;  
+      height: auto !important;  
+    }
+     
+    #aplayer.aplayer-fixed {
+      border-radius: 10px !important;
+      overflow: hidden !important;
+    }
+
+     
+    #aplayer.aplayer-fixed .aplayer-body {
+      border-radius: 10px !important;
+      overflow: hidden !important;
+      background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+     
+    #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-list li {
+      border-radius: 3px !important;
+      transition: all 0.2s ease !important;
+    }
 </style>
 
 <script>
