@@ -876,54 +876,32 @@
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 
 <script>
+
+function createMusic(name, artist, path, coverImage, lrcFile) {
+    return {
+        name: name,
+        artist: artist,
+        url: staticDir + path + '/' + name + '.mp3',
+        cover: staticDir + path + '/' + (coverImage || 'image.png'),
+        lrc: staticDir + path + '/' + (lrcFile || 'lrc.lrc')
+    };
+}
 const staticDir = "https:\/\/easthq.github.io\/" + "music/";
 const ap = new APlayer({
     container: document.getElementById('aplayer'),
     bgColor: 'rgba(0, 0, 0, 1.0)',
     lrcType: 3,
     audio: [
-        {
-             name: '手写的从前', 
-             artist: '周杰伦', 
-             url: staticDir + '周杰伦/手写的从前/手写的从前.mp3', 
-             cover: staticDir + '周杰伦/手写的从前/cover.png', 
-             lrc: staticDir + '周杰伦/手写的从前/手写的从前.lrc',  
-        },
-        {
-             name: '黑色幽默', 
-             artist: '周杰伦', 
-             url: staticDir + '周杰伦/黑色幽默/黑色幽默.mp3', 
-             cover: staticDir + '周杰伦/黑色幽默/image.png', 
-             lrc: staticDir + '周杰伦/黑色幽默/lrc.lrc',  
-        },
-        {
-            name: '晴天',
-            artist: '周杰伦',
-            url: staticDir + '周杰伦/晴天/晴天.mp3',
-            cover: staticDir + '周杰伦/晴天/image.png',
-            lrc: staticDir + '周杰伦/晴天/lrc.lrc',
-        },
-        {
-            name: '枫',
-            artist: '周杰伦',
-            url: staticDir + '周杰伦/枫/枫.mp3',
-            cover: staticDir + '周杰伦/枫/image.png',
-            lrc: staticDir + '周杰伦/枫/lrc.lrc',
-        },
-        {
-            name: '稻香',
-            artist: '周杰伦',
-            url: staticDir + '周杰伦/稻香/稻香.mp3',
-            cover: staticDir + '周杰伦/稻香/image.png',
-            lrc: staticDir + '周杰伦/稻香/lrc.lrc',
-        },
-        {
-            name: '花海',
-            artist: '周杰伦',
-            url: staticDir + '周杰伦/花海/花海.mp3',
-            cover: staticDir + '周杰伦/花海/image.png',
-            lrc: staticDir + '周杰伦/花海/lrc.lrc',
-        },
+        createMusic('手写的从前', '周杰伦', '周杰伦/手写的从前'),
+        createMusic('晴天', '周杰伦', '周杰伦/晴天'),
+        createMusic('枫', '周杰伦', '周杰伦/枫'),
+        createMusic('珊瑚海', '周杰伦', '周杰伦/珊瑚海'),
+        createMusic('稻香', '周杰伦', '周杰伦/稻香'),
+        createMusic('花海', '周杰伦', '周杰伦/花海'),
+        createMusic('黑色幽默', '周杰伦', '周杰伦/黑色幽默'),
+        createMusic('蒲公英的约定', '周杰伦', '周杰伦/蒲公英的约定'),
+        createMusic('说好的幸福呢', '周杰伦', '周杰伦/说好的幸福呢'),
+        createMusic('听妈妈的话', '周杰伦', '周杰伦/听妈妈的话'),
         {
              name: 'Stay with me', 
              artist: 'CHANYEOL, Punch', 
@@ -938,8 +916,6 @@ const ap = new APlayer({
              cover: staticDir + '卢广仲/cover.png', 
              lrc: staticDir + '卢广仲/lrc.lrc',  
         },
-        
-
     ],
     
     fixed: true
@@ -1082,6 +1058,19 @@ setTimeout(() => {
       border-radius: 3px !important;
       transition: all 0.2s ease !important;
     }
+
+  
+  @media screen and (max-width: 768px) {
+     
+    #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-lrc {
+      display: none !important;
+    }
+    
+     
+    #aplayer.aplayer-fixed.aplayer-narrow .aplayer-lrc {
+      display: block !important;
+    }
+  }
 </style>
 
 <script>
