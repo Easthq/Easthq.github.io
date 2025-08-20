@@ -900,38 +900,136 @@ setTimeout(() => {
 </style>
 
 <script>
-    
+let isRestoring = false; 
 
-    window.onbeforeunload = () => {
-        
-        const playInfo = {
-            index: ap.list.index,
-            currentTime: ap.audio.currentTime,
-            paused: ap.paused
-        };
-        localStorage.setItem("playInfo", JSON.stringify(playInfo));
-    };
 
-    
 
-    window.onload = () => {
-        
-        const playInfo = JSON.parse(localStorage.getItem("playInfo"));
-        if (!playInfo) {
-            return;
+window.addEventListener('beforeunload', () => {
+    if (ap && ap.audio) {
+        try {
+            const playInfo = {
+                index: ap.list.index,
+                currentTime: ap.audio.currentTime,
+                paused: ap.paused
+            };
+            localStorage.setItem("playInfo", JSON.stringify(playInfo));
+        } catch (error) {
+            console.log('保存播放状态失败:', error);
         }
+    }
+});
+
+
+
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        
+        savePlayState();
+    } else {
+        
+        setTimeout(() => {
+            restorePlayState();
+        }, 100);
+    }
+});
+
+
+
+function savePlayState() {
+    if (ap && ap.audio) {
+        try {
+            const playInfo = {
+                index: ap.list.index,
+                currentTime: ap.audio.currentTime,
+                paused: ap.paused
+            };
+            localStorage.setItem("playInfo", JSON.stringify(playInfo));
+        } catch (error) {
+            console.log('保存播放状态失败:', error);
+        }
+    }
+}
+
+
+
+function restorePlayState() {
+    
+    if (isRestoring) return;
+    
+    const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+    if (!playInfo) {
+        return;
+    }
+    
+    isRestoring = true;
+    
+    try {
         
         ap.list.switch(playInfo.index);
+        
         
         setTimeout(() => {
             
             ap.seek(playInfo.currentTime);
             
+            
             if (!playInfo.paused) {
-                ap.play()
+                ap.play();
             }
-        }, 500);
-    };
+            
+            
+            setTimeout(() => {
+                updateAPlayerUI(!playInfo.paused);
+                isRestoring = false;
+            });
+            
+        }, 100);
+    } catch (error) {
+        console.log('恢复播放状态失败:', error);
+        isRestoring = false;
+    }
+}
+
+
+
+function updateAPlayerUI(isPlaying) {
+    setTimeout(() => {
+        const aplayer = document.querySelector('.aplayer');
+        if (!aplayer) return;
+        
+        
+        if (isPlaying) {
+            aplayer.classList.remove('aplayer-paused');
+            aplayer.classList.add('aplayer-playing');
+        } else {
+            aplayer.classList.remove('aplayer-playing');
+            aplayer.classList.add('aplayer-paused');
+        }
+        
+        
+        const playBtn = aplayer.querySelector('.aplayer-play');
+        const pauseBtn = aplayer.querySelector('.aplayer-pause');
+        
+        if (playBtn && pauseBtn) {
+            if (isPlaying) {
+                playBtn.style.display = 'none';
+                pauseBtn.style.display = 'inline-block';
+            } else {
+                playBtn.style.display = 'inline-block';
+                pauseBtn.style.display = 'none';
+            }
+        }
+    }, 50);
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    setTimeout(() => {
+        restorePlayState();
+    }, 300);
+});
 </script>
 
 <style>
