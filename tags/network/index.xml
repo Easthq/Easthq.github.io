@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Network on 咸鱼的小站</title>
+        <link>https://easthq.github.io/tags/network/</link>
+        <description>Recent content in Network on 咸鱼的小站</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>smart fish</copyright>
+        <lastBuildDate>Fri, 22 Aug 2025 09:50:56 +0800</lastBuildDate><atom:link href="https://easthq.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>网卡编辑器</title>
+        <link>https://easthq.github.io/p/netconfig/</link>
+        <pubDate>Fri, 22 Aug 2025 09:15:02 +0800</pubDate>
+        
+        <guid>https://easthq.github.io/p/netconfig/</guid>
+        <description>&lt;h1 id=&#34;安装&#34;&gt;安装
+&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;在&lt;code&gt;Github release&lt;/code&gt;下载最新版&lt;a class=&#34;link&#34; href=&#34;https://github.com/Easthq/netConfig/releases/tag/v1.0.0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;网卡配置编辑器&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;下载&lt;code&gt;netConfig.zip&lt;/code&gt;，解压到任意目录。&lt;/li&gt;
+&lt;li&gt;将目录中的&lt;code&gt;netConfig.exe&lt;/code&gt;文件右键发送到桌面快捷方式。&lt;/li&gt;
+&lt;li&gt;右键桌面的快捷方式-属性-快捷方式-高级-用管理员方式启动（或属性-兼容性-以管理员身份运行）。&lt;/li&gt;
+&lt;li&gt;之后可双击管理员运行此程序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;使用方法&#34;&gt;使用方法
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://easthq.github.io/p/netconfig/app-help.png&#34;
+	width=&#34;2037&#34;
+	height=&#34;1387&#34;
+	srcset=&#34;https://easthq.github.io/p/netconfig/app-help_hu_303c58f9c7d4e9d6.png 480w, https://easthq.github.io/p/netconfig/app-help_hu_88537a91225cba00.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;一图解&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;146&#34;
+		data-flex-basis=&#34;352px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;编辑预置网卡信息&#34;&gt;编辑预置网卡信息
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;通过中间的增删改按钮，可对预置的网卡信息进行增删改。&lt;/li&gt;
+&lt;li&gt;点击移动按钮，可对网卡进行排序。&lt;/li&gt;
+&lt;li&gt;最后一定要点保存，持久化网卡配置信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;也可以通过软件目录中的&lt;code&gt;network_configs.json&lt;/code&gt;文件以json格式进行编辑&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;应用网卡配置&#34;&gt;应用网卡配置
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;通过下拉框，选择要配置的网卡&lt;/li&gt;
+&lt;li&gt;在&lt;code&gt;网卡配置列表&lt;/code&gt;中选择配置，双击即可应用&lt;/li&gt;
+&lt;li&gt;或在当前网卡配置中编辑配置信息，点击&lt;code&gt;应用静态IP&lt;/code&gt;，可将配置应用到当前网卡&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
