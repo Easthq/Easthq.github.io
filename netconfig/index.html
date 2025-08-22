@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://easthq.github.io/netconfig/'>
 
-<link rel="stylesheet" href="/scss/style.min.9f0ee5c5f13992dd75ed5d47ce217c3e506849a964d793f433c6a2b661e3bde6.css"><meta property='og:title' content="网卡编辑器">
+<link rel="stylesheet" href="/scss/style.min.c364c72f06258a2dc49bf45f4454134ca21bf3b26bf3d769f995ce563ceaae0e.css"><meta property='og:title' content="网卡编辑器">
 <meta property='og:description' content="快捷的编辑网卡配置，便于调试网络设备">
 <meta property='og:url' content='https://easthq.github.io/netconfig/'>
 <meta property='og:site_name' content='咸鱼的小站'>
@@ -375,17 +375,23 @@
     }
 </style>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    
+    function initTocToggle() {
         var toggleButton = document.getElementById('toggle-toc');
         var tocContainer = document.getElementById('toc-container');
         
         
         if (toggleButton && tocContainer) {
             
+            var newToggleButton = toggleButton.cloneNode(true);
+            toggleButton.parentNode.replaceChild(newToggleButton, toggleButton);
+            toggleButton = newToggleButton;
+            
+            
             toggleButton.addEventListener('click', function(e) {
                 e.stopPropagation();
                 var computedDisplay = window.getComputedStyle(tocContainer).display;
-                
+
                 if (computedDisplay === 'none') {
                     tocContainer.style.display = 'block';
                 } else {
@@ -394,14 +400,30 @@
             });
             
             
-            document.addEventListener('click', function(e) {
-                if (tocContainer.style.display === 'block' && 
-                    !tocContainer.contains(e.target) && 
-                    e.target !== toggleButton) {
-                    tocContainer.style.display = 'none';
-                }
-            });
+            document.removeEventListener('click', handleDocumentClick);
+            document.addEventListener('click', handleDocumentClick);
         }
+        
+        function handleDocumentClick(e) {
+            if (tocContainer && tocContainer.style.display === 'block' && 
+                !tocContainer.contains(e.target) && 
+                e.target !== toggleButton) {
+                tocContainer.style.display = 'none';
+            }
+        }
+    }
+
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTocToggle);
+    } else {
+        initTocToggle();
+    }
+    
+    
+    document.addEventListener('pjax:complete', function() {
+        
+        setTimeout(initTocToggle, 100);
     });
 </script>
             
