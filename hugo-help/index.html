@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://easthq.github.io/hugo-help/'>
 
-<link rel="stylesheet" href="/scss/style.min.878b9fe5b6f57a1fa174c6ff2837f9892018ec00c176fa913b90833f5c442687.css"><meta property='og:title' content="Hugo修改记录">
+<link rel="stylesheet" href="/scss/style.min.9f0ee5c5f13992dd75ed5d47ce217c3e506849a964d793f433c6a2b661e3bde6.css"><meta property='og:title' content="Hugo修改记录">
 <meta property='og:description' content="一些hugo使用技巧">
 <meta property='og:url' content='https://easthq.github.io/hugo-help/'>
 <meta property='og:site_name' content='咸鱼的小站'>
@@ -205,12 +205,9 @@
             </a>
         </li>
         
-        <li class="menu-bottom-section">
-            <ol class="menu">
-
-                
-                    <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -218,7 +215,7 @@
 
 
 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -226,11 +223,10 @@
 
 
 
-                        <span>暗色模式</span>
-                    </li>
-                
-            </ol>
-        </li>
+                <span>暗色模式</span>
+            </li>
+        
+        
     </ol>
 </aside>
 
@@ -325,6 +321,12 @@
         font-size: 1.2rem;
     }
 
+    * {
+        -webkit-tap-highlight-color: transparent;
+        tap-highlight-color: transparent;
+    }
+     
+
     .widget--toc #TableOfContents {
         overflow-x: auto;
         max-height: 66vh;
@@ -342,7 +344,6 @@
 
         #toggle-toc {
             display: block;  
-            bottom: 100px;  
         }
     }
 
@@ -370,34 +371,33 @@
     }
 </style>
 <script>
-    var toggleButton = document.getElementById('toggle-toc');
-    var tocContainer = document.getElementById('toc-container');
-
-    
-    toggleButton.addEventListener('click', function() {
-        if (tocContainer.style.display === 'none' || tocContainer.style.display === '') {
-            tocContainer.style.display = 'block';
-        } else {
-            tocContainer.style.display = 'none';
-        }
-    });
-
-    
-    toggleButton.addEventListener('mouseover', function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        var toggleButton = document.getElementById('toggle-toc');
+        var tocContainer = document.getElementById('toc-container');
         
-            tocContainer.style.display = 'block';
         
-    });
-
-    
-    document.addEventListener('click', function(event) {
-        
+        if (toggleButton && tocContainer) {
             
-            if (!tocContainer.contains(event.target) && event.target !== toggleButton) {
+            toggleButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var computedDisplay = window.getComputedStyle(tocContainer).display;
                 
-                tocContainer.style.display = 'none';
-            }
-        
+                if (computedDisplay === 'none') {
+                    tocContainer.style.display = 'block';
+                } else {
+                    tocContainer.style.display = 'none';
+                }
+            });
+            
+            
+            document.addEventListener('click', function(e) {
+                if (tocContainer.style.display === 'block' && 
+                    !tocContainer.contains(e.target) && 
+                    e.target !== toggleButton) {
+                    tocContainer.style.display = 'none';
+                }
+            });
+        }
     });
 </script>
             
@@ -1256,6 +1256,10 @@ setTimeout(() => {
     &:hover {
       transform: translateX(2px); 
   }
+  * {
+        -webkit-tap-highlight-color: transparent;
+        tap-highlight-color: transparent;
+    }
   }
 
    
@@ -1342,116 +1346,37 @@ setTimeout(() => {
 
 <script>
     
-    function savePlayInfo() {
-        try {
-            const playInfo = {
-                index: ap.list.index,
-                currentTime: ap.audio.currentTime,
-                paused: ap.paused,
-                timestamp: Date.now() 
-            };
-            localStorage.setItem("playInfo", JSON.stringify(playInfo));
-        } catch (e) {
-            console.warn('保存播放信息失败:', e);
-        }
-    }
 
-    
-    document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-            savePlayInfo();
-        }
-    });
-
-    
-    window.addEventListener('beforeunload', () => {
-        savePlayInfo();
-    });
-
-    
-    ap.on('play', () => {
-        savePlayInfo();
-    });
-
-    ap.on('pause', () => {
-        savePlayInfo();
-    });
-
-    ap.on('timeupdate', () => {
+    window.onbeforeunload = () => {
         
-        if (Math.floor(ap.audio.currentTime) % 5 === 0) {
-            savePlayInfo();
-        }
-    });
+        const playInfo = {
+            index: ap.list.index,
+            currentTime: ap.audio.currentTime,
+            paused: ap.paused
+        };
+        localStorage.setItem("playInfo", JSON.stringify(playInfo));
+    };
 
     
-    ap.on('listswitch', () => {
+
+    window.onload = () => {
+        
+        const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+        if (!playInfo) {
+            return;
+        }
+        
+        ap.list.switch(playInfo.index);
+        
         setTimeout(() => {
-            savePlayInfo();
-        }, 100);
-    });
-
-    
-    window.addEventListener('load', () => {
-        try {
-            const playInfoStr = localStorage.getItem("playInfo");
-            if (!playInfoStr) {
-                return;
-            }
             
-            const playInfo = JSON.parse(playInfoStr);
+            ap.seek(playInfo.currentTime);
             
-            
-            if (Date.now() - playInfo.timestamp > 3600000) {
-                localStorage.removeItem("playInfo");
-                return;
+            if (!playInfo.paused) {
+                ap.play()
             }
-
-            if (playInfo.index !== undefined) {
-                
-                ap.list.switch(playInfo.index);
-                
-                
-                const restorePlayState = () => {
-                    
-                    if (playInfo.currentTime && ap.audio) {
-                        ap.seek(playInfo.currentTime);
-                    }
-                    
-                    
-                    if (!playInfo.paused) {
-                        
-                        if (ap.audio.readyState >= 2) {
-                            ap.play();
-                        } else {
-                            ap.audio.addEventListener('canplay', () => {
-                                ap.play();
-                            }, { once: true });
-                        }
-                    }
-                };
-
-                
-                if (ap.list.index === playInfo.index) {
-                    setTimeout(restorePlayState, 300);
-                } else {
-                    
-                    ap.on('listswitch', function onSwitch() {
-                        setTimeout(restorePlayState, 300);
-                        ap.off('listswitch', onSwitch); 
-                    });
-                }
-            }
-        } catch (e) {
-            console.warn('恢复播放信息失败:', e);
-            localStorage.removeItem("playInfo");
-        }
-    });
-
-    
-    window.addEventListener('focus', () => {
-        
-    });
+        }, 500);
+    };
 </script>
 
 
