@@ -9,10 +9,10 @@
         <copyright>smart fish</copyright>
         <lastBuildDate>Tue, 19 Aug 2025 12:58:30 +0800</lastBuildDate><atom:link href="https://easthq.github.io/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo修改记录</title>
-        <link>https://easthq.github.io/p/hugo-help/</link>
+        <link>https://easthq.github.io/hugo-help/</link>
         <pubDate>Sat, 16 Aug 2025 18:40:51 +0800</pubDate>
         
-        <guid>https://easthq.github.io/p/hugo-help/</guid>
+        <guid>https://easthq.github.io/hugo-help/</guid>
         <description>&lt;p&gt;注：themes 文件夹内的主题文件为默认模板，如要修改，建议将文件copy至hugo项目下的同名目录中&lt;/p&gt;
 &lt;h1 id=&#34;修改默认模板为yaml格式&#34;&gt;修改默认模板为yaml格式
 &lt;/h1&gt;&lt;p&gt;将以下内容粘贴至&lt;code&gt;archetypes\default.md&lt;/code&gt;中。&lt;br&gt;

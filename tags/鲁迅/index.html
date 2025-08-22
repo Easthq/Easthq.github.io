@@ -10,7 +10,7 @@
 <meta property='og:description' content="今天又偷偷更新...">
 <meta property='og:url' content='https://easthq.github.io/tags/%E9%B2%81%E8%BF%85/'>
 <meta property='og:site_name' content='咸鱼的小站'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-08-22T12:30:13&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-08-22T15:41:32&#43;08:00 '/>
 <meta name="twitter:title" content="Tag: 鲁迅 - 咸鱼的小站">
 <meta name="twitter:description" content="今天又偷偷更新..."><link rel="alternate" type="application/rss&#43;xml" href="https://easthq.github.io/tags/%E9%B2%81%E8%BF%85/index.xml">
     <link rel="shortcut icon" href="/favicon.png" />
@@ -396,7 +396,7 @@
     <section class="article-list--compact">
         
             <article>
-    <a href="/p/qq%E8%80%81%E5%B8%88%E7%9A%84%E6%99%B4%E5%A4%A9/">
+    <a href="/qq%E8%80%81%E5%B8%88%E7%9A%84%E6%99%B4%E5%A4%A9/">
         <div class="article-details">
             <h2 class="article-title">QQ老师的晴天</h2>
             <footer class="article-time">
@@ -594,6 +594,7 @@
       display: none;
       position: fixed;
       bottom: 30px;
+      right: 30px;  
       z-index: 99;
       cursor: pointer;
       width: 30px;
@@ -602,11 +603,9 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      opacity: 0.5;  
-       
+      opacity: 0.5;
       transition: transform 1s ease-in-out;
   }
-
 </style>
 
 
@@ -614,15 +613,19 @@
   
 
   function initScrollTop() {
-      let rightSideBar = document.querySelector(".right-sidebar");
-      if (!rightSideBar) {
+      
+      if (document.getElementById("backTopBtn")) {
           return;
       }
       
+      
       let btn = document.createElement("div");
       btn.id = "backTopBtn";
-      btn.onclick = backToTop
-      rightSideBar.appendChild(btn)
+      btn.onclick = backToTop;
+      
+      
+      document.body.appendChild(btn);
+      
       
       window.onscroll = function() {
           
@@ -632,15 +635,30 @@
               btn.style.display = "none";
           }
       };
+      
+      
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          btn.style.display = "block";
+      }
   }
 
   
 
   function backToTop(){
-      window.scrollTo({ top: 0, behavior: "smooth" })
+      window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  initScrollTop();
+  
+  if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initScrollTop);
+  } else {
+      initScrollTop();
+  }
+  
+  
+  document.addEventListener('pjax:complete', () => {
+      initScrollTop();
+  });
 </script>
 
 
@@ -666,6 +684,7 @@ const ap = new APlayer({
     bgColor: 'rgba(0, 0, 0, 1.0)',
     lrcType: 3,
     audio: [
+        createMusic('Canon in D', 'Johann Pachelbel/Chris Snelling', 'Canon'),
         createMusic('手写的从前', '周杰伦', '周杰伦/手写的从前'),
         createMusic('晴天', '周杰伦', '周杰伦/晴天'),
         createMusic('枫', '周杰伦', '周杰伦/枫'),
