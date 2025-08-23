@@ -2,23 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://easthq.github.io/hugo-help/</loc>
+    <lastmod>2025-08-24T03:23:23+08:00</lastmod>
+  </url><url>
     <loc>https://easthq.github.io/categories/</loc>
-    <lastmod>2025-08-23T23:04:52+08:00</lastmod>
+    <lastmod>2025-08-24T03:23:23+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/categories/hugo/</loc>
-    <lastmod>2025-08-23T23:04:52+08:00</lastmod>
+    <lastmod>2025-08-24T03:23:23+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/tags/hugo/</loc>
-    <lastmod>2025-08-23T23:04:52+08:00</lastmod>
+    <lastmod>2025-08-24T03:23:23+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/hugo-dir/</loc>
     <lastmod>2025-08-23T23:04:52+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/post/</loc>
-    <lastmod>2025-08-23T23:04:52+08:00</lastmod>
+    <lastmod>2025-08-24T03:23:23+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/tags/</loc>
-    <lastmod>2025-08-23T23:04:52+08:00</lastmod>
+    <lastmod>2025-08-24T03:23:23+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/tags/pjax/</loc>
     <lastmod>2025-08-23T23:04:52+08:00</lastmod>
@@ -46,9 +49,6 @@
   </url><url>
     <loc>https://easthq.github.io/netconfig/</loc>
     <lastmod>2025-08-22T09:50:56+08:00</lastmod>
-  </url><url>
-    <loc>https://easthq.github.io/hugo-help/</loc>
-    <lastmod>2025-08-23T23:04:52+08:00</lastmod>
   </url><url>
     <loc>https://easthq.github.io/%E6%89%8B%E5%86%99%E7%9A%84%E4%BB%8E%E5%89%8D/</loc>
     <lastmod>2025-08-16T19:09:12+08:00</lastmod>
