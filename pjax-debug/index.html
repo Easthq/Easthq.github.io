@@ -1,0 +1,2050 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一些引入Pjax脚本后遇到的问题">
+<title>Pjax Debug</title>
+
+<link rel='canonical' href='https://easthq.github.io/pjax-debug/'>
+
+<link rel="stylesheet" href="/scss/style.min.a68be5522f13f376cd388567c0cea073488b80539c345b2c71377a44e4fa3669.css"><meta property='og:title' content="Pjax Debug">
+<meta property='og:description' content="一些引入Pjax脚本后遇到的问题">
+<meta property='og:url' content='https://easthq.github.io/pjax-debug/'>
+<meta property='og:site_name' content='咸鱼的小站'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:tag' content='Pjax' /><meta property='article:published_time' content='2025-08-23T19:19:34&#43;08:00'/><meta property='article:modified_time' content='2025-08-23T23:04:52&#43;08:00'/>
+<meta name="twitter:title" content="Pjax Debug">
+<meta name="twitter:description" content="一些引入Pjax脚本后遇到的问题">
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "light");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_8b1183422daca17e.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">👍</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">咸鱼的小站</a></h1>
+            <h2 class="site-description">今天又偷偷更新...</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://blog.csdn.net/qq_37227125'
+                        target="_blank"
+                        title="CSDN"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-carbon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 10v-.2a1.8 1.8 0 0 0 -1.8 -1.8h-.4a1.8 1.8 0 0 0 -1.8 1.8v4.4a1.8 1.8 0 0 0 1.8 1.8h.4a1.8 1.8 0 0 0 1.8 -1.8v-.2" /><path d="M3 3m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Easthq/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:easthq@126.com'
+                        target="_blank"
+                        title="Mail"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+        
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    
+    <button id="toggle-toc" class="mobile-only">Toc</button>
+    <section class="widget archives" id="toc-container">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#引入pjax脚本">引入Pjax脚本</a></li>
+    <li><a href="#pjax-自动执行脚本模板">Pjax 自动执行脚本模板</a></li>
+    <li><a href="#pjax-引入giscus评论脚本">Pjax 引入giscus评论脚本</a></li>
+    <li><a href="#pjax-引入vercount脚本">Pjax 引入vercount脚本</a></li>
+    <li><a href="#pjax-引入返回顶部按钮">Pjax 引入返回顶部按钮</a></li>
+    <li><a href="#pjax-引入移动端目录按钮">Pjax 引入移动端目录按钮</a></li>
+    <li><a href="#参考链接">参考链接</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+
+<style>
+    .container {
+        .right-sidebar {
+             
+            display: flex;
+        }
+    }
+
+     
+    .mobile-only {
+        display: none !important;
+    }
+
+    #toc-container {
+         
+         
+        position: fixed;
+         
+        bottom: 21%;
+         
+        right: 60px;
+         
+        background-color: var(--card-background);
+         
+        padding: 10px;
+         
+        border: 1px solid #96979a50;
+        border-radius: var(--card-border-radius);
+         
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+         
+        z-index: 9998 !important;
+         
+        max-height: 75vh;
+        overflow-y: auto;
+         
+        width: auto;
+        max-width: 290px;
+    }
+
+    #toggle-toc {
+        position: fixed;
+        bottom: 22%;
+        right: 20px;
+        padding: 10px 10px;
+        z-index: 9998 !important;
+        border: 0px solid #96979a50;
+        border-radius: 7px;
+        box-shadow: var(--shadow-l1);
+        background-color: #00640010;
+        color: #34495e;
+         
+        display: none;  
+        margin-bottom: -20px;
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+        tap-highlight-color: transparent;
+    }
+     
+
+    .widget--toc #TableOfContents {
+        overflow-x: auto;
+        max-height: 66vh;
+        width: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+        .mobile-only {
+            display: block !important;  
+        }
+
+        #toc-container {
+            display: none;  
+        }
+
+        #toggle-toc {
+            display: block;  
+        }
+    }
+
+     
+    @media screen and (min-width: 769px) {
+        #toc-container {
+            display: block !important;  
+            position: static;  
+            border: none;  
+            box-shadow: none;  
+            max-height: none;  
+            overflow-y: visible;  
+            margin-top: 20px;  
+            right: auto;  
+            bottom: auto;  
+            width: auto;  
+            max-width: 100%;  
+            background-color: transparent;  
+            padding: 0;  
+        }
+
+        #toggle-toc {
+            display: none !important;  
+        }
+    }
+</style>
+<script>
+    
+    function initTocToggle() {
+        var toggleButton = document.getElementById('toggle-toc');
+        var tocContainer = document.getElementById('toc-container');
+        
+        
+        if (toggleButton && tocContainer) {
+            
+            var newToggleButton = toggleButton.cloneNode(true);
+            toggleButton.parentNode.replaceChild(newToggleButton, toggleButton);
+            toggleButton = newToggleButton;
+            
+            
+            toggleButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var computedDisplay = window.getComputedStyle(tocContainer).display;
+
+                if (computedDisplay === 'none') {
+                    tocContainer.style.display = 'block';
+                } else {
+                    tocContainer.style.display = 'none';
+                }
+            });
+            
+            
+            document.removeEventListener('click', handleDocumentClick);
+            document.addEventListener('click', handleDocumentClick);
+        }
+        
+        function handleDocumentClick(e) {
+            if (tocContainer && tocContainer.style.display === 'block' && 
+                !tocContainer.contains(e.target) && 
+                e.target !== toggleButton) {
+                tocContainer.style.display = 'none';
+            }
+        }
+    }
+
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTocToggle);
+    } else {
+        initTocToggle();
+    }
+    
+    
+    document.addEventListener('pjax:complete', function() {
+        
+        setTimeout(initTocToggle, 100);
+    });
+</script>
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/hugo/" >
+                Hugo
+            </a>
+        
+    </header>
+    
+    <a href="/pjax-debug/">
+        <div class="article-title-wrapper">
+            <h2 class="article-title">
+                <span>Pjax Debug</span>
+            </h2>
+            
+            <h3 class="article-subtitle">
+                一些引入Pjax脚本后遇到的问题
+            </h3>
+            
+        </div>
+    </a>
+    
+    
+    
+    
+
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-8-23</time>
+            </div>
+        
+
+        <div class="article-lastmod">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-repeat"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12.5 21h-6.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v3" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h12" /><path d="M20 14l2 2h-3" /><path d="M20 18l2 -2" /><path d="M19 16a3 3 0 1 0 2 5.236" /></svg>
+                <time>
+                    2025-8-23 23:04
+                </time>
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+        
+        <div>
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-word"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" /><path d="M9 12l1.333 5l1.667 -4l1.667 4l1.333 -5" /></svg> 
+            <time class="article-words">
+                2145字
+            </time>
+        </div>
+
+        
+        <div id="viewCount">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+            <time class="article-time--reading">
+                
+                <span id="vercount_value_page_pv">... </span>次
+            </time>
+        </div>
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="引入pjax脚本">引入Pjax脚本
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&#34;https://cdn.jsdelivr.net/npm/pjax/pjax.min.js&#34;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 定义 Pjax 需要刷新的部分
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">pjax</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pjax</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">selectors</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;.main-container&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;.js-Pjax&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="pjax-自动执行脚本模板">Pjax 自动执行脚本模板
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// 前边定义过，这里不用重复定义
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">pjax</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pjax</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">selectors</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;.main-container&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;.js-Pjax&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="o">-</span> <span class="kd">with</span> <span class="p">.</span><span class="nx">Site</span><span class="p">.</span><span class="nx">Params</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">giscus</span> <span class="o">-</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;js-Pjax&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 判断当前是否有文章评论标识
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kd">let</span> <span class="nx">comment</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&#34;.comment&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">comment</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 将对应评论的脚本内容填进去
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="s1">&#39;https://giscus.app/client.js&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="err">···</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 寻找合适的元素，添加脚本进去(在页脚前将评论脚本插入)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.site-footer&#39;</span><span class="p">).</span><span class="nx">before</span><span class="p">(</span><span class="nx">script</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})(</span><span class="nb">document</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="o">-</span> <span class="nx">end</span> <span class="o">-</span><span class="p">}}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="pjax-引入giscus评论脚本">Pjax 引入giscus评论脚本
+</h1><p>同为giscus, hugo stack可直接复制</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">{{</span><span class="o">-</span> <span class="kd">with</span> <span class="p">.</span><span class="nx">Site</span><span class="p">.</span><span class="nx">Params</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">giscus</span> <span class="o">-</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;js-Pjax&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 判断当前是否有文章评论标识
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kd">let</span> <span class="nx">comment</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&#34;.comment&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">comment</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 将对应评论的脚本内容填进去
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="s1">&#39;https://giscus.app/client.js&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-repo&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- .repo -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-repo-id&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- .repoID -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-category&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- .category -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-category-id&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- .categoryID -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-mapping&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- default `title` .mapping -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-strict&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- default 0 .strict -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-reactions-enabled&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- default 1 .reactionsEnabled -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-emit-metadata&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- default 0 .emitMetadata -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-input-position&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- default `top` .inputPosition -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-theme&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- default `light` .lightTheme -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-lang&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- default `en` .lang -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-loading&#39;</span><span class="p">,</span> <span class="s1">&#39;{{- .loading -}}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;crossorigin&#39;</span><span class="p">,</span> <span class="s1">&#39;anonymous&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">script</span><span class="p">.</span><span class="kr">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 寻找合适的元素，添加脚本进去(在页脚前将评论脚本插入)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.site-footer&#39;</span><span class="p">).</span><span class="nx">before</span><span class="p">(</span><span class="nx">script</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})(</span><span class="nb">document</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="o">-</span> <span class="nx">end</span> <span class="o">-</span><span class="p">}}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="pjax-引入vercount脚本">Pjax 引入vercount脚本
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;js-Pjax&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">const</span> <span class="nx">existingScript</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;script[src=&#34;https://cn.vercount.one/js&#34;]&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">existingScript</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">existingScript</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 将对应评论的脚本内容填进去
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">&#39;https://cn.vercount.one/js&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">script</span><span class="p">.</span><span class="nx">defer</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 将相关的class也添加到js-Pjax中
+</span></span></span><span class="line"><span class="cl"><span class="c1">// vercount无法在首页显示浏览数，故在首页隐藏
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">&lt;</span><span class="nx">script</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;js-Pjax&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">function</span> <span class="nx">showHideView</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 判断是否存在vercount标签
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kd">let</span> <span class="nx">viewCounts</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&#34;#viewCount&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">viewCounts</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 判断是否为文章页
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kd">let</span> <span class="nx">article</span> <span class="o">=</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&#34;.article-page&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">article</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">viewCounts</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">ele</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">ele</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">});</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nx">showHideView</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="pjax-引入返回顶部按钮">Pjax 引入返回顶部按钮
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c">&lt;!--</span> <span class="nx">返回顶部按钮</span> <span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="err">#</span><span class="nx">backTopBtn</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">display</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">position</span><span class="o">:</span> <span class="nx">fixed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">bottom</span><span class="o">:</span> <span class="mi">30</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">right</span><span class="o">:</span> <span class="mi">30</span><span class="nx">px</span><span class="p">;</span> <span class="cm">/* 改为right定位，避免依赖右侧边栏 */</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">z</span><span class="o">-</span><span class="nx">index</span><span class="o">:</span> <span class="mi">99</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">cursor</span><span class="o">:</span> <span class="nx">pointer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">width</span><span class="o">:</span> <span class="mi">30</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">height</span><span class="o">:</span> <span class="mi">30</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">background</span><span class="o">-</span><span class="nx">image</span><span class="o">:</span> <span class="nx">url</span><span class="p">({{</span> <span class="p">(</span><span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s2">&#34;icons/backTop.svg&#34;</span><span class="p">).</span><span class="nx">RelPermalink</span> <span class="p">}});</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">background</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="nx">contain</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">background</span><span class="o">-</span><span class="nx">repeat</span><span class="o">:</span> <span class="nx">no</span><span class="o">-</span><span class="nx">repeat</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">background</span><span class="o">-</span><span class="nx">position</span><span class="o">:</span> <span class="nx">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">opacity</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">transition</span><span class="o">:</span> <span class="nx">transform</span> <span class="mi">1</span><span class="nx">s</span> <span class="nx">ease</span><span class="o">-</span><span class="k">in</span><span class="o">-</span><span class="nx">out</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/style&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span> <span class="nx">返回顶部</span> <span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">   * 滚动回顶部初始化
+</span></span></span><span class="line"><span class="cl"><span class="cm">   */</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">initScrollTop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// 检查按钮是否已存在，避免重复创建
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;backTopBtn&#34;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c1">// 创建返回顶部按钮
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kd">let</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;div&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">btn</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">&#34;backTopBtn&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">btn</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">backToTop</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c1">// 直接添加到body中，不依赖特定容器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">btn</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c1">// 滚动监听
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nb">window</span><span class="p">.</span><span class="nx">onscroll</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="c1">// 当网页向下滑动 20px 出现&#34;返回顶部&#34; 按钮
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">btn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;block&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">btn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;none&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">};</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c1">// 初始化时检查是否需要显示按钮
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">btn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;block&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">   * 返回顶部
+</span></span></span><span class="line"><span class="cl"><span class="cm">   */</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">backToTop</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">window</span><span class="p">.</span><span class="nx">scrollTo</span><span class="p">({</span> <span class="nx">top</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">behavior</span><span class="o">:</span> <span class="s2">&#34;smooth&#34;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 页面加载完成后初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="s1">&#39;loading&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;DOMContentLoaded&#39;</span><span class="p">,</span> <span class="nx">initScrollTop</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">initScrollTop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">// Pjax完成后重新初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pjax:complete&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">initScrollTop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="pjax-引入移动端目录按钮">Pjax 引入移动端目录按钮
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">{{</span> <span class="k">if</span> <span class="p">(.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">Scratch</span><span class="p">.</span><span class="nx">Get</span> <span class="s2">&#34;TOCEnabled&#34;</span><span class="p">)</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--</span> <span class="nx">移动端目录按钮</span> <span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;toggle-toc&#34;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;mobile-only&#34;</span><span class="o">&gt;</span><span class="nx">Toc</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">section</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;widget archives&#34;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;toc-container&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;widget-icon&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{{</span> <span class="nx">partial</span> <span class="s2">&#34;helper/icon&#34;</span> <span class="s2">&#34;hash&#34;</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">h2</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;widget-title section-title&#34;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">T</span> <span class="s2">&#34;article.tableOfContents&#34;</span> <span class="p">}}</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;widget--toc&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{{</span> <span class="p">.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">TableOfContents</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/section&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span> <span class="nx">end</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nx">right</span><span class="o">-</span><span class="nx">sidebar</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* flex 布局显示移动端目录按钮 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">display</span><span class="o">:</span> <span class="nx">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 默认隐藏移动端目录元素，电脑端将覆盖显示 */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">mobile</span><span class="o">-</span><span class="nx">only</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">display</span><span class="o">:</span> <span class="nx">none</span> <span class="o">!</span><span class="nx">important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="err">#</span><span class="nx">toc</span><span class="o">-</span><span class="nx">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 初始时不再隐藏目录，电脑端默认显示，移动端会被覆盖隐藏 */</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* display: none;  */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">position</span><span class="o">:</span> <span class="nx">fixed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 使用固定定位，使其固定在视口中 */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">bottom</span><span class="o">:</span> <span class="mi">21</span><span class="o">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 距离视口顶部的距离 */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">right</span><span class="o">:</span> <span class="mi">60</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 距离视口右侧的距离 */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="o">:</span> <span class="kd">var</span><span class="p">(</span><span class="o">--</span><span class="nx">card</span><span class="o">-</span><span class="nx">background</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 可选：设置背景颜色 */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">padding</span><span class="o">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 可选：添加一些内边距 */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">border</span><span class="o">:</span> <span class="mi">1</span><span class="nx">px</span> <span class="nx">solid</span> <span class="err">#</span><span class="mi">96979</span><span class="nx">a50</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">border</span><span class="o">-</span><span class="nx">radius</span><span class="o">:</span> <span class="kd">var</span><span class="p">(</span><span class="o">--</span><span class="nx">card</span><span class="o">-</span><span class="nx">border</span><span class="o">-</span><span class="nx">radius</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 可选：添加边框样式 */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">box</span><span class="o">-</span><span class="nx">shadow</span><span class="o">:</span> <span class="nx">rgba</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">)</span> <span class="mi">0</span><span class="nx">px</span> <span class="mi">2</span><span class="nx">px</span> <span class="mi">4</span><span class="nx">px</span> <span class="mi">0</span><span class="nx">px</span><span class="p">,</span> <span class="nx">rgba</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mf">0.32</span><span class="p">)</span> <span class="mi">0</span><span class="nx">px</span> <span class="mi">2</span><span class="nx">px</span> <span class="mi">16</span><span class="nx">px</span> <span class="mi">0</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 可选：设置 z-index 以确保它显示在其他元素之上 */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">z</span><span class="o">-</span><span class="nx">index</span><span class="o">:</span> <span class="mi">9998</span> <span class="o">!</span><span class="nx">important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 设置最大高度为视口高度的 75% */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">max</span><span class="o">-</span><span class="nx">height</span><span class="o">:</span> <span class="mi">75</span><span class="nx">vh</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">overflow</span><span class="o">-</span><span class="nx">y</span><span class="o">:</span> <span class="nx">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 让容器的宽度自适应内容 */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">width</span><span class="o">:</span> <span class="nx">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">max</span><span class="o">-</span><span class="nx">width</span><span class="o">:</span> <span class="mi">290</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="err">#</span><span class="nx">toggle</span><span class="o">-</span><span class="nx">toc</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">position</span><span class="o">:</span> <span class="nx">fixed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">bottom</span><span class="o">:</span> <span class="mi">22</span><span class="o">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">right</span><span class="o">:</span> <span class="mi">20</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">padding</span><span class="o">:</span> <span class="mi">10</span><span class="nx">px</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">z</span><span class="o">-</span><span class="nx">index</span><span class="o">:</span> <span class="mi">9998</span> <span class="o">!</span><span class="nx">important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">border</span><span class="o">:</span> <span class="mi">0</span><span class="nx">px</span> <span class="nx">solid</span> <span class="err">#</span><span class="mi">96979</span><span class="nx">a50</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">border</span><span class="o">-</span><span class="nx">radius</span><span class="o">:</span> <span class="mi">7</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">box</span><span class="o">-</span><span class="nx">shadow</span><span class="o">:</span> <span class="kd">var</span><span class="p">(</span><span class="o">--</span><span class="nx">shadow</span><span class="o">-</span><span class="nx">l1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="o">:</span> <span class="err">#</span><span class="mi">00640010</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">color</span><span class="o">:</span> <span class="err">#</span><span class="mi">34495</span><span class="nx">e</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 确保按钮在其他元素之上 */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">display</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span> <span class="cm">/* 初始时在电脑端也隐藏按钮，移动端通过媒体查询显示 */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">margin</span><span class="o">-</span><span class="nx">bottom</span><span class="o">:</span> <span class="o">-</span><span class="mi">20</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">cursor</span><span class="o">:</span> <span class="nx">pointer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mf">1.2</span><span class="nx">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">*</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">-</span><span class="nx">webkit</span><span class="o">-</span><span class="nx">tap</span><span class="o">-</span><span class="nx">highlight</span><span class="o">-</span><span class="nx">color</span><span class="o">:</span> <span class="nx">transparent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">tap</span><span class="o">-</span><span class="nx">highlight</span><span class="o">-</span><span class="nx">color</span><span class="o">:</span> <span class="nx">transparent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* #toggle-toc:hover {
+</span></span></span><span class="line"><span class="cl"><span class="cm">        box-shadow: var(--shadow-l2);
+</span></span></span><span class="line"><span class="cl"><span class="cm">        background-color: var(--card-background-selected);
+</span></span></span><span class="line"><span class="cl"><span class="cm">    } */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">widget</span><span class="o">--</span><span class="nx">toc</span> <span class="err">#</span><span class="nx">TableOfContents</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">overflow</span><span class="o">-</span><span class="nx">x</span><span class="o">:</span> <span class="nx">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">max</span><span class="o">-</span><span class="nx">height</span><span class="o">:</span> <span class="mi">66</span><span class="nx">vh</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">width</span><span class="o">:</span> <span class="nx">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="err">@</span><span class="nx">media</span> <span class="nx">screen</span> <span class="nx">and</span> <span class="p">(</span><span class="nx">max</span><span class="o">-</span><span class="nx">width</span><span class="o">:</span> <span class="mi">768</span><span class="nx">px</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nx">mobile</span><span class="o">-</span><span class="nx">only</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">display</span><span class="o">:</span> <span class="nx">block</span> <span class="o">!</span><span class="nx">important</span><span class="p">;</span> <span class="cm">/* 移动端显示 &#39;Toc&#39; 按钮 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="err">#</span><span class="nx">toc</span><span class="o">-</span><span class="nx">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">display</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span> <span class="cm">/* 移动端依旧隐藏目录容器，通过按钮显示 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="err">#</span><span class="nx">toggle</span><span class="o">-</span><span class="nx">toc</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">display</span><span class="o">:</span> <span class="nx">block</span><span class="p">;</span> <span class="cm">/* 移动端显示 toggle 按钮 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 电脑端样式：屏幕宽度大于 768px 时应用 */</span>
+</span></span><span class="line"><span class="cl">    <span class="err">@</span><span class="nx">media</span> <span class="nx">screen</span> <span class="nx">and</span> <span class="p">(</span><span class="nx">min</span><span class="o">-</span><span class="nx">width</span><span class="o">:</span> <span class="mi">769</span><span class="nx">px</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="err">#</span><span class="nx">toc</span><span class="o">-</span><span class="nx">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">display</span><span class="o">:</span> <span class="nx">block</span> <span class="o">!</span><span class="nx">important</span><span class="p">;</span> <span class="cm">/* 电脑端默认显示目录容器 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">position</span><span class="o">:</span> <span class="kr">static</span><span class="p">;</span> <span class="cm">/* 移除固定定位，让目录在正常文档流中 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">border</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span> <span class="cm">/* 移除边框 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">box</span><span class="o">-</span><span class="nx">shadow</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span> <span class="cm">/* 移除阴影 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">max</span><span class="o">-</span><span class="nx">height</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span> <span class="cm">/* 移除最大高度限制 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">overflow</span><span class="o">-</span><span class="nx">y</span><span class="o">:</span> <span class="nx">visible</span><span class="p">;</span> <span class="cm">/* 移除垂直滚动条 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">margin</span><span class="o">-</span><span class="nx">top</span><span class="o">:</span> <span class="mi">20</span><span class="nx">px</span><span class="p">;</span> <span class="cm">/* 可以根据需要添加一些顶部外边距，与页面内容区隔开 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">right</span><span class="o">:</span> <span class="nx">auto</span><span class="p">;</span> <span class="cm">/* 重置 right 属性 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">bottom</span><span class="o">:</span> <span class="nx">auto</span><span class="p">;</span> <span class="cm">/* 重置 bottom 属性 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">width</span><span class="o">:</span> <span class="nx">auto</span><span class="p">;</span> <span class="cm">/* 宽度自适应内容 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">max</span><span class="o">-</span><span class="nx">width</span><span class="o">:</span> <span class="mi">100</span><span class="o">%</span><span class="p">;</span> <span class="cm">/* 最大宽度可以设置为 100% 或您需要的宽度 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="o">:</span> <span class="nx">transparent</span><span class="p">;</span> <span class="cm">/* 背景色透明，或者设置为您想要的颜色 */</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">padding</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span> <span class="cm">/* 移除内边距 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="err">#</span><span class="nx">toggle</span><span class="o">-</span><span class="nx">toc</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">display</span><span class="o">:</span> <span class="nx">none</span> <span class="o">!</span><span class="nx">important</span><span class="p">;</span> <span class="cm">/* 电脑端隐藏 &#39;Toc&#39; 按钮 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/style&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 初始化TOC切换功能
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">function</span> <span class="nx">initTocToggle</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">toggleButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;toggle-toc&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">tocContainer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;toc-container&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// 确保元素存在再添加事件监听器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="nx">toggleButton</span> <span class="o">&amp;&amp;</span> <span class="nx">tocContainer</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 移除可能存在的旧事件监听器，防止重复绑定
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kd">var</span> <span class="nx">newToggleButton</span> <span class="o">=</span> <span class="nx">toggleButton</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">toggleButton</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">replaceChild</span><span class="p">(</span><span class="nx">newToggleButton</span><span class="p">,</span> <span class="nx">toggleButton</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">toggleButton</span> <span class="o">=</span> <span class="nx">newToggleButton</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1">// 添加点击事件：切换目录的显示状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">toggleButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="kd">var</span> <span class="nx">computedDisplay</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">tocContainer</span><span class="p">).</span><span class="nx">display</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="nx">computedDisplay</span> <span class="o">===</span> <span class="s1">&#39;none&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">tocContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s1">&#39;block&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">tocContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">});</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1">// 点击页面其他地方隐藏目录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">handleDocumentClick</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">handleDocumentClick</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="kd">function</span> <span class="nx">handleDocumentClick</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">tocContainer</span> <span class="o">&amp;&amp;</span> <span class="nx">tocContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">===</span> <span class="s1">&#39;block&#39;</span> <span class="o">&amp;&amp;</span> 
+</span></span><span class="line"><span class="cl">                <span class="o">!</span><span class="nx">tocContainer</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span> <span class="o">&amp;&amp;</span> 
+</span></span><span class="line"><span class="cl">                <span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="o">!==</span> <span class="nx">toggleButton</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">tocContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 页面加载完成后初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="s1">&#39;loading&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;DOMContentLoaded&#39;</span><span class="p">,</span> <span class="nx">initTocToggle</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">initTocToggle</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Pjax完成后重新初始化（兼容Pjax）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pjax:complete&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 延迟执行确保DOM已更新
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">initTocToggle</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="参考链接">参考链接
+</h1><p><a class="link" href="https://letere-gzj.github.io/hugo-stack/tags/hugo/"  target="_blank" rel="noopener"
+    >[1]: https://letere-gzj.github.io/hugo-stack/tags/hugo/</a><br>
+<a class="link" href="https://blog.laphel.com/posts/hugo-stack-renovation/#%E6%B7%BB%E5%8A%A0%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9B%AE%E5%BD%95"  target="_blank" rel="noopener"
+    >[2]: https://blog.laphel.com/posts/hugo-stack-renovation/#添加移动端目录</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hugo/">Hugo</a>
+        
+            <a href="/tags/pjax/">Pjax</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2025-8-23 23:04
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/hugo-help/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo修改记录</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="easthq/easthq.github.io"
+    data-repo-id="R_kgDOPdAQpw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOPdAQp84CuNdu"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+    <div class="comment"></div>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 smart fish
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.f526867ee8950fa0f19a2c55b1dc057ac2cf07131afbbe83822535a7586cff91.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+
+<script>
+    var pjax = new Pjax({
+        selectors: [
+            ".main-container",
+            ".js-Pjax",
+        ],
+    });
+</script>
+
+
+<script>
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            if (responseText) {
+                
+                let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+                
+                let bodyClass = newDom.body.className;
+                document.body.setAttribute("class", bodyClass)
+            }
+            
+            pjax._handleResponse(responseText, request, href, options);
+        } else {
+            
+        }
+    }
+</script>
+
+
+ <script>
+    document.addEventListener('pjax:complete', () => {
+        
+        window.Stack.init();
+    })
+</script>
+
+
+<script class="js-Pjax">
+    (function () {
+        
+        let comment = document.querySelector(".comment");
+        if (!comment) {
+            return
+        }
+        let script = document.createElement('script');
+        
+        script.setAttribute('src', 'https://giscus.app/client.js');
+        script.setAttribute('data-repo', 'easthq\/easthq.github.io');
+        script.setAttribute('data-repo-id', 'R_kgDOPdAQpw');
+        script.setAttribute('data-category', 'Announcements');
+        script.setAttribute('data-category-id', 'DIC_kwDOPdAQp84CuNdu');
+        script.setAttribute('data-mapping', 'pathname');
+        script.setAttribute('data-strict', '0');
+        script.setAttribute('data-reactions-enabled', '1');
+        script.setAttribute('data-emit-metadata', '0');
+        script.setAttribute('data-input-position', 'top');
+        script.setAttribute('data-theme', 'light');
+        script.setAttribute('data-lang', 'zh-CN');
+        script.setAttribute('data-loading', '');
+        script.setAttribute('crossorigin', 'anonymous');
+        script.async = true;
+        
+        document.querySelector('.site-footer').before(script)
+    })(document);
+</script>
+
+
+    
+    <script src=https://easthq.github.io/js/topbar.min.js></script>
+
+<script>
+    
+    topbar.config({
+        barColors: {
+            '0': 'rgba(255,  255, 255, 1)', 
+            '1.0': 'rgba(0, 149, 234,  1)' 
+        }
+    })
+	
+    document.addEventListener('pjax:send', () => {
+        
+        topbar.show();
+    })
+	
+    document.addEventListener('pjax:complete', () => {
+        
+        topbar.hide();
+    })
+</script>
+
+
+
+<style>
+  @font-face {
+    font-family: 'CascadiaMono';
+    src: url(https://easthq.github.io/font/CascadiaMono.ttf) format('truetype');
+  }
+
+  :root {
+    --base-font-family: 'CascadiaMono';
+    --code-font-family: 'CascadiaMono';
+  }
+</style>
+
+
+
+
+
+<div class="js-Pjax">
+    <script>
+        (function() {
+            const existingScript = document.querySelector('script[src="https://cn.vercount.one/js"]');
+            if (existingScript) {
+              existingScript.remove();
+            }
+
+            let script = document.createElement('script');
+            
+            script.src = 'https://cn.vercount.one/js';
+            script.defer = true;
+            document.body.appendChild(script)
+        })();
+    </script>
+</div>
+
+
+<script class="js-Pjax">
+    function showHideView() {
+        
+        let viewCounts = document.querySelectorAll("#viewCount");
+        if (viewCounts) {
+            
+            let article =  document.querySelector(".article-page");
+            if (!article) {
+                viewCounts.forEach(ele => {
+                    ele.style.display = 'none';
+                });
+            }
+        }
+    }
+    
+    showHideView();
+</script>
+
+
+
+<style>
+  #backTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;  
+      z-index: 99;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      background-image: url(/icons/backTop.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.5;
+      transition: transform 1s ease-in-out;
+  }
+</style>
+
+
+<script>
+  
+
+  function initScrollTop() {
+      
+      if (document.getElementById("backTopBtn")) {
+          return;
+      }
+      
+      
+      let btn = document.createElement("div");
+      btn.id = "backTopBtn";
+      btn.onclick = backToTop;
+      
+      
+      document.body.appendChild(btn);
+      
+      
+      window.onscroll = function() {
+          
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              btn.style.display = "block";
+          } else {
+              btn.style.display = "none";
+          }
+      };
+      
+      
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          btn.style.display = "block";
+      }
+  }
+
+  
+
+  function backToTop(){
+      window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  
+  if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initScrollTop);
+  } else {
+      initScrollTop();
+  }
+  
+  
+  document.addEventListener('pjax:complete', () => {
+      initScrollTop();
+  });
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+
+<script>
+
+function createMusic(name, artist, path, coverImage, lrcFile) {
+    return {
+        name: name,
+        artist: artist,
+        url: staticDir + path + '/' + name + '.mp3',
+        cover: staticDir + path + '/' + (coverImage || 'image.png'),
+        lrc: staticDir + path + '/' + (lrcFile || 'lrc.lrc')
+    };
+}
+const staticDir = "https:\/\/easthq.github.io\/" + "music/";
+const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    bgColor: 'rgba(0, 0, 0, 1.0)',
+    lrcType: 3,
+    audio: [
+        createMusic('Canon in D', 'Johann Pachelbel/Chris Snelling', 'Canon'),
+        createMusic('手写的从前', '周杰伦', '周杰伦/手写的从前'),
+        createMusic('晴天', '周杰伦', '周杰伦/晴天'),
+        createMusic('枫', '周杰伦', '周杰伦/枫'),
+        createMusic('珊瑚海', '周杰伦', '周杰伦/珊瑚海'),
+        createMusic('稻香', '周杰伦', '周杰伦/稻香'),
+        createMusic('花海', '周杰伦', '周杰伦/花海'),
+        createMusic('黑色幽默', '周杰伦', '周杰伦/黑色幽默'),
+        createMusic('蒲公英的约定', '周杰伦', '周杰伦/蒲公英的约定'),
+        createMusic('说好的幸福呢', '周杰伦', '周杰伦/说好的幸福呢'),
+        createMusic('听妈妈的话', '周杰伦', '周杰伦/听妈妈的话'),
+        {
+             name: 'Stay with me', 
+             artist: 'CHANYEOL, Punch', 
+             url: staticDir + 'Stay with me/Stay with me.mp3', 
+             cover: staticDir + 'Stay with me/cover.png', 
+             lrc: staticDir + 'Stay with me/lrc.lrc',  
+        },
+        {
+             name: '才二十三+爱爱爱+苏丽珍+好不容易+Love Song+为你写的歌', 
+             artist: '卢广仲', 
+             url: staticDir + '卢广仲/卢广仲-才二十三+爱爱爱+苏丽珍+好不容易+Love Song+为你写的歌.mp3', 
+             cover: staticDir + '卢广仲/cover.png', 
+             lrc: staticDir + '卢广仲/lrc.lrc',  
+        },
+    ],
+    
+    fixed: true
+});
+setTimeout(() => {
+  
+  if (ap && typeof ap.list !== 'undefined') {
+    ap.list.show(); 
+  }
+}, 500);
+</script>
+
+
+<style>
+   
+  #aplayer .aplayer-lrc {
+    height: 38px !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+
+  #aplayer .aplayer-lrc p {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+
+   
+  #aplayer .aplayer-lrc p.aplayer-lrc-current {
+    font-size: 16px !important;
+    font-weight: bold !important;
+  }
+
+   
+  #aplayer .aplayer-lrc p.aplayer-lrc-history,
+  #aplayer .aplayer-lrc p:not(.aplayer-lrc-current) {
+    font-size: 14px !important;
+  }
+
+   
+  #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-info {
+    
+    animation: fadeInUp 0.3s ease-out 0.1s both !important;
+  }
+
+  #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-controller {
+    animation: fadeInUp 0.3s ease-out 0.2s both !important;
+  }
+
+  #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-list {
+    animation: fadeInUp 0.3s ease-out 0.3s both !important;
+  }
+
+   
+  @keyframes fadeInUp {
+    from {
+      opacity: 1;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+   
+  #aplayer.aplayer-fixed .aplayer-body {
+    background-color: rgba(116, 115, 115, 0) !important;  
+         
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 10% !important;
+    overflow: hidden !important;
+    &:hover {
+      transform: translateX(2px); 
+  }
+  * {
+        -webkit-tap-highlight-color: transparent;
+        tap-highlight-color: transparent;
+    }
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-pic {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    transform: none !important;
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-info {
+    display: none !important;
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-button {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 10 !important;
+  }
+
+   
+   
+  
+     
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-miniswitcher {
+     
+    position: absolute !important;
+     
+    background-color: rgba(0, 0, 0, 0) !important;
+     
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-miniswitcher svg {
+    width: 14px !important;
+    height: 14px !important;
+    fill: white !important;
+    opacity: 0.9 !important;
+  }
+  
+   
+    #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-body {
+      width: auto !important;  
+      height: auto !important;  
+    }
+     
+    #aplayer.aplayer-fixed {
+      border-radius: 10px !important;
+      overflow: hidden !important;
+    }
+
+     
+    #aplayer.aplayer-fixed .aplayer-body {
+      border-radius: 10px !important;
+      overflow: hidden !important;
+      background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+     
+    #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-list li {
+      border-radius: 3px !important;
+      transition: all 0.2s ease !important;
+    }
+    
+
+  
+  @media screen and (max-width: 768px) {
+     
+    #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-lrc {
+      display: none !important;
+    }
+    
+     
+    #aplayer.aplayer-fixed.aplayer-narrow .aplayer-lrc {
+      display: block !important;
+    }
+  }
+</style>
+
+
+<script>
+    
+
+    window.onbeforeunload = () => {
+        
+        const playInfo = {
+            index: ap.list.index,
+            currentTime: ap.audio.currentTime,
+            paused: ap.paused
+        };
+        localStorage.setItem("playInfo", JSON.stringify(playInfo));
+    };
+
+    
+
+    window.onload = () => {
+        
+        const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+        if (!playInfo) {
+            return;
+        }
+        
+        ap.list.switch(playInfo.index);
+        
+        setTimeout(() => {
+            
+            ap.seek(playInfo.currentTime);
+            
+            if (!playInfo.paused) {
+                ap.play()
+            }
+        }, 500);
+    };
+</script>
+
+
+<style>
+   
+  #dark-mode-toggle {
+    position: fixed !important;
+    bottom: 90px !important;  
+    left: 20px !important;
+    z-index: 1001 !important;
+    background: var(--sidebar-bg-color) !important;  
+    border-radius: 50% !important;
+    padding: 10px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+   
+  #dark-mode-toggle span {
+    display: none !important;
+  }
+
+   
+  #dark-mode-toggle svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+</style>
+
+
+<script>
+    async function renderKaTeX() {
+        
+        let katex = document.querySelector(".math-katex");
+        if (!katex) {
+            return;
+        }
+        
+        while (typeof renderMathInElement !== 'function') {
+            await delay(500);
+        }        
+        
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });
+    }
+    
+    
+
+    function delay(time) {
+        return new Promise(resolve => {
+            setTimeout(resolve, time)
+        })
+    }
+
+    document.addEventListener('pjax:complete', () => {
+        renderKaTeX();
+    })
+</script>
+
+    </body>
+</html>

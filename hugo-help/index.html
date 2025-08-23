@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://easthq.github.io/hugo-help/'>
 
-<link rel="stylesheet" href="/scss/style.min.d388f402b83a648f751facbe07810eb6828dd051e16cb3d6c11527495846cb84.css"><meta property='og:title' content="Hugo修改记录">
+<link rel="stylesheet" href="/scss/style.min.a68be5522f13f376cd388567c0cea073488b80539c345b2c71377a44e4fa3669.css"><meta property='og:title' content="Hugo修改记录">
 <meta property='og:description' content="一些hugo使用技巧">
 <meta property='og:url' content='https://easthq.github.io/hugo-help/'>
 <meta property='og:site_name' content='咸鱼的小站'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hugo' /><meta property='article:published_time' content='2025-08-16T18:40:51&#43;08:00'/><meta property='article:modified_time' content='2025-08-19T12:58:30&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:published_time' content='2025-08-16T18:40:51&#43;08:00'/><meta property='article:modified_time' content='2025-08-23T23:04:52&#43;08:00'/>
 <meta name="twitter:title" content="Hugo修改记录">
 <meta name="twitter:description" content="一些hugo使用技巧">
     <link rel="shortcut icon" href="/favicon.png" />
@@ -435,8 +435,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E6%95%99%E7%A8%8B/" >
-                教程
+            <a href="/categories/hugo/" >
+                Hugo
             </a>
         
     </header>
@@ -477,7 +477,7 @@
         <div class="article-lastmod">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-repeat"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12.5 21h-6.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v3" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h12" /><path d="M20 14l2 2h-3" /><path d="M20 18l2 -2" /><path d="M19 16a3 3 0 1 0 2 5.236" /></svg>
                 <time>
-                    2025-8-19 12:58
+                    2025-8-23 23:04
                 </time>
             </div>
             <div>
@@ -498,7 +498,7 @@
         <div>
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-word"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" /><path d="M9 12l1.333 5l1.667 -4l1.667 4l1.333 -5" /></svg> 
             <time class="article-words">
-                1064字
+                1128字
             </time>
         </div>
 
@@ -524,7 +524,7 @@
 <h1 id="修改默认模板为yaml格式">修改默认模板为yaml格式
 </h1><p>将以下内容粘贴至<code>archetypes\default.md</code>中。<br>
 （vsc中的markdown highlighting不支持toml）<br>
-注：此处slug为文件夹名</p>
+注：此处slug为文件夹名，tags，categories默认为文件所在目录的父目录名</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -541,20 +541,21 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ .File.Dir | path.Base | urlize }}&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ .File.Dir | path.Base }}&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">date </span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ .Date }}&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">draft </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title </span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ replace .File.ContentBaseName &#34;-&#34; &#34; &#34; | title }}&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">description </span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">tags</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="s2">&#34;&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="s1">&#39;{{ path.Base (path.Dir (path.Dir (replace .File.Dir &#34;\\&#34; &#34;/&#34;))) }}&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">categories</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="s2">&#34;&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="s1">&#39;{{ path.Base (path.Dir (path.Dir (replace .File.Dir &#34;\\&#34; &#34;/&#34;))) }}&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="增加bilibili视频可选播放进度增加自动播放是否静音等变量">增加bilibili视频可选播放进度，增加自动播放，是否静音等变量
-</h1><p>将<code>themes\hugo-theme-pure\layouts\partials\bilibili.html</code> copy 到 <code>layouts\shortcodes\bilibili.html</code>下</p>
+</h1><p>将<code>themes\hugo-theme-pure\layouts\partials\bilibili.html</code> copy 到 <code>layouts\shortcodes\bilibili.html</code>下<br>
+<em><strong>正式引用时，代码需要&rsquo;{{ }}&rsquo;</strong></em></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -565,17 +566,19 @@
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">\{\{&lt; BV号 播放开始时间 播放自动开始 分P 是否静音 &gt;}}
-</span></span><span class="line"><span class="cl">此为变量顺序，类python方法赋值，不写明则为默认值，不可乱序赋值。
-</span></span><span class="line"><span class="cl">例：
-</span></span><span class="line"><span class="cl">  &lt;!-- \{\{&lt; bilibili BV11i4y1b7pd&gt;}}
-</span></span><span class="line"><span class="cl">  \{\{&lt; bilibili BV11i4y1b7pd &#34;1:14&#34;&gt;}} 1:14开始播放，默认不自动播放
-</span></span><span class="line"><span class="cl">  \{\{&lt; bilibili BV11i4y1b7pd &#34;1:14&#34; 1 &gt;}} 1:14开始播放，自动播放
-</span></span><span class="line"><span class="cl">  \{\{&lt; bilibili BV11i4y1b7pd &#34;1:14&#34; 1 1 0&gt;}} 1:14开始播放，自动播放视频中的1p，不静音 --&gt;
-</span></span><span class="line"><span class="cl">但是浏览器总会禁止自动播放的视频的音量，目前静音算是无效。
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">{<span class="l">&lt; BV号 播放开始时间 播放自动开始 分P 是否静音 &gt;}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">此为变量顺序，类python方法赋值，不写明则为默认值，不可乱序赋值。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">例：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>{<span class="l">&lt; bilibili BV11i4y1b7pd&gt;}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>{<span class="l">&lt; bilibili BV11i4y1b7pd &#34;1:14&#34;&gt;}   1:14开始播放，默认不自动播放</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>{<span class="l">&lt; bilibili BV11i4y1b7pd &#34;1:14&#34; 1 &gt;}  1:14开始播放，自动播放</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>{<span class="l">&lt; bilibili BV11i4y1b7pd &#34;1:14&#34; 1 1 0&gt;} 1:14开始播放，自动播放视频中的1p，不静音 --&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">但是浏览器总会禁止自动播放的视频的音量，目前静音算是无效。</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -750,7 +753,7 @@
 
 
         <span>
-            最后更新于 2025-8-19 12:58
+            最后更新于 2025-8-23 23:04
         </span>
     </section></footer>
 
@@ -761,6 +764,28 @@
     
 
     
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/pjax-debug/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Pjax Debug</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
 
      
     

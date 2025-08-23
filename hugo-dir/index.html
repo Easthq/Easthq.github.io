@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="由Qwen3-coder生成的hugo stack目录结构">
+<title>Hugo Stack目录结构</title>
+
+<link rel='canonical' href='https://easthq.github.io/hugo-dir/'>
+
+<link rel="stylesheet" href="/scss/style.min.a68be5522f13f376cd388567c0cea073488b80539c345b2c71377a44e4fa3669.css"><meta property='og:title' content="Hugo Stack目录结构">
+<meta property='og:description' content="由Qwen3-coder生成的hugo stack目录结构">
+<meta property='og:url' content='https://easthq.github.io/hugo-dir/'>
+<meta property='og:site_name' content='咸鱼的小站'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hugo' /><meta property='article:published_time' content='2025-08-23T19:44:48&#43;08:00'/><meta property='article:modified_time' content='2025-08-23T23:04:52&#43;08:00'/>
+<meta name="twitter:title" content="Hugo Stack目录结构">
+<meta name="twitter:description" content="由Qwen3-coder生成的hugo stack目录结构">
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "light");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_8b1183422daca17e.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">👍</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">咸鱼的小站</a></h1>
+            <h2 class="site-description">今天又偷偷更新...</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://blog.csdn.net/qq_37227125'
+                        target="_blank"
+                        title="CSDN"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-carbon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 10v-.2a1.8 1.8 0 0 0 -1.8 -1.8h-.4a1.8 1.8 0 0 0 -1.8 1.8v4.4a1.8 1.8 0 0 0 1.8 1.8h.4a1.8 1.8 0 0 0 1.8 -1.8v-.2" /><path d="M3 3m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Easthq/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:easthq@126.com'
+                        target="_blank"
+                        title="Mail"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+        
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/hugo/" >
+                Hugo
+            </a>
+        
+    </header>
+    
+    <a href="/hugo-dir/">
+        <div class="article-title-wrapper">
+            <h2 class="article-title">
+                <span>Hugo Stack目录结构</span>
+            </h2>
+            
+            <h3 class="article-subtitle">
+                由Qwen3-coder生成的hugo stack目录结构
+            </h3>
+            
+        </div>
+    </a>
+    
+    
+    
+    
+
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-8-23</time>
+            </div>
+        
+
+        <div class="article-lastmod">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-repeat"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12.5 21h-6.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v3" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h12" /><path d="M20 14l2 2h-3" /><path d="M20 18l2 -2" /><path d="M19 16a3 3 0 1 0 2 5.236" /></svg>
+                <time>
+                    2025-8-23 23:04
+                </time>
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 4 分钟
+                </time>
+            </div>
+        
+        
+        <div>
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-word"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" /><path d="M9 12l1.333 5l1.667 -4l1.667 4l1.333 -5" /></svg> 
+            <time class="article-words">
+                1658字
+            </time>
+        </div>
+
+        
+        <div id="viewCount">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+            <time class="article-time--reading">
+                
+                <span id="vercount_value_page_pv">... </span>次
+            </time>
+        </div>
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">themes/stack/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── .devcontainer/                         </span><span class="w"> </span><span class="c"># 开发容器配置，用于在VS Code中使用开发容器</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── devcontainer.json                  </span><span class="w"> </span><span class="c"># 开发容器配置文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   └── Dockerfile                         </span><span class="w"> </span><span class="c"># Docker镜像配置文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── .github/                               </span><span class="w"> </span><span class="c"># GitHub相关配置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   └── workflows/                         </span><span class="w"> </span><span class="c"># GitHub Actions工作流配置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       └── publish.yaml                   </span><span class="w"> </span><span class="c"># 发布相关的自动化工作流</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── archetypes/                            </span><span class="w"> </span><span class="c"># 内容模板文件，用于创建新内容时的默认Front Matter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── categories.md                      </span><span class="w"> </span><span class="c"># 分类内容的模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── default.md                         </span><span class="w"> </span><span class="c"># 默认内容模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   └── tags.md                            </span><span class="w"> </span><span class="c"># 标签内容的模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── assets/                                </span><span class="w"> </span><span class="c"># 静态资源文件（CSS、JavaScript、图片等）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── icons/                             </span><span class="w"> </span><span class="c"># SVG图标文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── archives.svg                   </span><span class="w"> </span><span class="c"># 归档图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── arrow-back.svg                 </span><span class="w"> </span><span class="c"># 后退箭头图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── arrow-forward.svg              </span><span class="w"> </span><span class="c"># 前进箭头图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── back.svg                       </span><span class="w"> </span><span class="c"># 返回图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── brand-github.svg               </span><span class="w"> </span><span class="c"># GitHub品牌图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── brand-twitter.svg              </span><span class="w"> </span><span class="c"># Twitter品牌图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── calendar.svg                   </span><span class="w"> </span><span class="c"># 日历图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── category.svg                   </span><span class="w"> </span><span class="c"># 分类图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── clock.svg                      </span><span class="w"> </span><span class="c"># 时钟图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── close.svg                      </span><span class="w"> </span><span class="c"># 关闭图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── email.svg                      </span><span class="w"> </span><span class="c"># 邮箱图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── hash.svg                       </span><span class="w"> </span><span class="c"># 哈希标签图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── home.svg                       </span><span class="w"> </span><span class="c"># 首页图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── link.svg                       </span><span class="w"> </span><span class="c"># 链接图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── menu.svg                       </span><span class="w"> </span><span class="c"># 菜单图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── moon.svg                       </span><span class="w"> </span><span class="c"># 月亮图标（暗色模式）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── search.svg                     </span><span class="w"> </span><span class="c"># 搜索图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── sun.svg                        </span><span class="w"> </span><span class="c"># 太阳图标（亮色模式）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── tag.svg                        </span><span class="w"> </span><span class="c"># 标签图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   └── user.svg                       </span><span class="w"> </span><span class="c"># 用户图标</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── img/                               </span><span class="w"> </span><span class="c"># 图片资源</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   └── default-hero.jpg               </span><span class="w"> </span><span class="c"># 默认的页面头图</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── jsconfig.json                      </span><span class="w"> </span><span class="c"># JavaScript配置文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── scss/                              </span><span class="w"> </span><span class="c"># SCSS样式文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── breakpoints.scss               </span><span class="w"> </span><span class="c"># 响应式断点定义</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── custom.scss                    </span><span class="w"> </span><span class="c"># 自定义样式文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── external/                      </span><span class="w"> </span><span class="c"># 外部样式库</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   │   └── normalize.scss             </span><span class="w"> </span><span class="c"># CSS重置样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── general.scss                   </span><span class="w"> </span><span class="c"># 通用样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── grid.scss                      </span><span class="w"> </span><span class="c"># 网格布局样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── partials/                      </span><span class="w"> </span><span class="c"># 部分样式文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   │   ├── article.scss               </span><span class="w"> </span><span class="c"># 文章样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   │   ├── comments.scss              </span><span class="w"> </span><span class="c"># 评论样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   │   ├── footer.scss                </span><span class="w"> </span><span class="c"># 页脚样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   │   ├── header.scss                </span><span class="w"> </span><span class="c"># 页头样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   │   ├── helper.scss                </span><span class="w"> </span><span class="c"># 辅助样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   │   ├── highlight.scss             </span><span class="w"> </span><span class="c"># 代码高亮样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   │   ├── pagination.scss            </span><span class="w"> </span><span class="c"># 分页样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   │   ├── sidebar.scss               </span><span class="w"> </span><span class="c"># 侧边栏样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   │   └── widget.scss                </span><span class="w"> </span><span class="c"># 小部件样式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── style.scss                     </span><span class="w"> </span><span class="c"># 主样式文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   └── variables.scss                 </span><span class="w"> </span><span class="c"># 样式变量定义</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   └── ts/                                </span><span class="w"> </span><span class="c"># TypeScript脚本文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── color.ts                       </span><span class="w"> </span><span class="c"># 颜色处理功能</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── colorScheme.ts                 </span><span class="w"> </span><span class="c"># 颜色方案切换功能</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── createElement.ts               </span><span class="w"> </span><span class="c"># 创建元素功能</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── gallery.ts                     </span><span class="w"> </span><span class="c"># 图片画廊功能</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── main.ts                        </span><span class="w"> </span><span class="c"># 主JavaScript入口文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── menu.ts                        </span><span class="w"> </span><span class="c"># 菜单功能</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── scrollspy.ts                   </span><span class="w"> </span><span class="c"># 滚动监听功能</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── search.tsx                     </span><span class="w"> </span><span class="c"># 搜索功能</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       └── smoothAnchors.ts               </span><span class="w"> </span><span class="c"># 平滑锚点滚动功能</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── config.yaml                            </span><span class="w"> </span><span class="c"># 主题配置文件，定义默认参数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── data/                                  </span><span class="w"> </span><span class="c"># 数据文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   └── external.yaml                      </span><span class="w"> </span><span class="c"># 外部资源定义（如CDN链接）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── debug.sh                               </span><span class="w"> </span><span class="c"># 调试脚本</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── exampleSite/                           </span><span class="w"> </span><span class="c"># 示例站点</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── content/                           </span><span class="w"> </span><span class="c"># 示例内容</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── hugo.yaml                          </span><span class="w"> </span><span class="c"># 示例站点配置文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   └── README.md                          </span><span class="w"> </span><span class="c"># 示例站点说明</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── go.mod                                 </span><span class="w"> </span><span class="c"># Go模块定义文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── i18n/                                  </span><span class="w"> </span><span class="c"># 国际化语言文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── ar.yaml                            </span><span class="w"> </span><span class="c"># 阿拉伯语</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── en.yaml                            </span><span class="w"> </span><span class="c"># 英语</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── zh-cn.yaml                         </span><span class="w"> </span><span class="c"># 简体中文</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   └── ...                                </span><span class="w"> </span><span class="c"># 其他语言文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── images/                                </span><span class="w"> </span><span class="c"># 主题图片</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── screenshot.png                     </span><span class="w"> </span><span class="c"># 主题截图</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   └── tn.png                             </span><span class="w"> </span><span class="c"># 缩略图</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── layouts/                               </span><span class="w"> </span><span class="c"># 页面布局模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── 404.html                           </span><span class="w"> </span><span class="c"># 404页面模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── _default/                          </span><span class="w"> </span><span class="c"># 默认布局</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── _markup/                       </span><span class="w"> </span><span class="c"># Markdown渲染模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── archives.html                  </span><span class="w"> </span><span class="c"># 归档页面模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── baseof.html                    </span><span class="w"> </span><span class="c"># 基础页面模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── list.html                      </span><span class="w"> </span><span class="c"># 列表页面模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── rss.xml                        </span><span class="w"> </span><span class="c"># RSS订阅模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   └── single.html                    </span><span class="w"> </span><span class="c"># 单页模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── index.html                         </span><span class="w"> </span><span class="c"># 首页模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── page/                              </span><span class="w"> </span><span class="c"># 页面模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── search.html                    </span><span class="w"> </span><span class="c"># 搜索页面模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   └── search.json                    </span><span class="w"> </span><span class="c"># 搜索数据JSON模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   ├── partials/                          </span><span class="w"> </span><span class="c"># 部分模板组件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── article/                       </span><span class="w"> </span><span class="c"># 文章相关组件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── article-list/                  </span><span class="w"> </span><span class="c"># 文章列表组件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── comments/                      </span><span class="w"> </span><span class="c"># 评论系统组件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── data/                          </span><span class="w"> </span><span class="c"># 数据展示组件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── footer/                        </span><span class="w"> </span><span class="c"># 页脚组件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── head/                          </span><span class="w"> </span><span class="c"># 头部组件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── helper/                        </span><span class="w"> </span><span class="c"># 辅助组件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── pagination.html                </span><span class="w"> </span><span class="c"># 分页组件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   ├── sidebar/                       </span><span class="w"> </span><span class="c"># 侧边栏组件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   │   └── widget/                        </span><span class="w"> </span><span class="c"># 小部件组件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│   └── shortcodes/                        </span><span class="w"> </span><span class="c"># 简码（shortcode）模板</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── bilibili.html                  </span><span class="w"> </span><span class="c"># 嵌入Bilibili视频简码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── gitlab.html                    </span><span class="w"> </span><span class="c"># 嵌入GitLab内容简码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── quote.html                     </span><span class="w"> </span><span class="c"># 引用简码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── tencent.html                   </span><span class="w"> </span><span class="c"># 嵌入腾讯视频简码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       ├── video.html                     </span><span class="w"> </span><span class="c"># 视频简码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">│       └── youtube.html                   </span><span class="w"> </span><span class="c"># 嵌入YouTube视频简码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── netlify.toml                           </span><span class="w"> </span><span class="c"># Netlify部署配置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── README.md                              </span><span class="w"> </span><span class="c"># 主题说明文档</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">├── theme.toml                             </span><span class="w"> </span><span class="c"># 主题元信息文件</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hugo/">Hugo</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2025-8-23 23:04
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="easthq/easthq.github.io"
+    data-repo-id="R_kgDOPdAQpw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOPdAQp84CuNdu"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+    <div class="comment"></div>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 smart fish
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.f526867ee8950fa0f19a2c55b1dc057ac2cf07131afbbe83822535a7586cff91.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+
+<script>
+    var pjax = new Pjax({
+        selectors: [
+            ".main-container",
+            ".js-Pjax",
+        ],
+    });
+</script>
+
+
+<script>
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            if (responseText) {
+                
+                let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+                
+                let bodyClass = newDom.body.className;
+                document.body.setAttribute("class", bodyClass)
+            }
+            
+            pjax._handleResponse(responseText, request, href, options);
+        } else {
+            
+        }
+    }
+</script>
+
+
+ <script>
+    document.addEventListener('pjax:complete', () => {
+        
+        window.Stack.init();
+    })
+</script>
+
+
+<script class="js-Pjax">
+    (function () {
+        
+        let comment = document.querySelector(".comment");
+        if (!comment) {
+            return
+        }
+        let script = document.createElement('script');
+        
+        script.setAttribute('src', 'https://giscus.app/client.js');
+        script.setAttribute('data-repo', 'easthq\/easthq.github.io');
+        script.setAttribute('data-repo-id', 'R_kgDOPdAQpw');
+        script.setAttribute('data-category', 'Announcements');
+        script.setAttribute('data-category-id', 'DIC_kwDOPdAQp84CuNdu');
+        script.setAttribute('data-mapping', 'pathname');
+        script.setAttribute('data-strict', '0');
+        script.setAttribute('data-reactions-enabled', '1');
+        script.setAttribute('data-emit-metadata', '0');
+        script.setAttribute('data-input-position', 'top');
+        script.setAttribute('data-theme', 'light');
+        script.setAttribute('data-lang', 'zh-CN');
+        script.setAttribute('data-loading', '');
+        script.setAttribute('crossorigin', 'anonymous');
+        script.async = true;
+        
+        document.querySelector('.site-footer').before(script)
+    })(document);
+</script>
+
+
+    
+    <script src=https://easthq.github.io/js/topbar.min.js></script>
+
+<script>
+    
+    topbar.config({
+        barColors: {
+            '0': 'rgba(255,  255, 255, 1)', 
+            '1.0': 'rgba(0, 149, 234,  1)' 
+        }
+    })
+	
+    document.addEventListener('pjax:send', () => {
+        
+        topbar.show();
+    })
+	
+    document.addEventListener('pjax:complete', () => {
+        
+        topbar.hide();
+    })
+</script>
+
+
+
+<style>
+  @font-face {
+    font-family: 'CascadiaMono';
+    src: url(https://easthq.github.io/font/CascadiaMono.ttf) format('truetype');
+  }
+
+  :root {
+    --base-font-family: 'CascadiaMono';
+    --code-font-family: 'CascadiaMono';
+  }
+</style>
+
+
+
+
+
+<div class="js-Pjax">
+    <script>
+        (function() {
+            const existingScript = document.querySelector('script[src="https://cn.vercount.one/js"]');
+            if (existingScript) {
+              existingScript.remove();
+            }
+
+            let script = document.createElement('script');
+            
+            script.src = 'https://cn.vercount.one/js';
+            script.defer = true;
+            document.body.appendChild(script)
+        })();
+    </script>
+</div>
+
+
+<script class="js-Pjax">
+    function showHideView() {
+        
+        let viewCounts = document.querySelectorAll("#viewCount");
+        if (viewCounts) {
+            
+            let article =  document.querySelector(".article-page");
+            if (!article) {
+                viewCounts.forEach(ele => {
+                    ele.style.display = 'none';
+                });
+            }
+        }
+    }
+    
+    showHideView();
+</script>
+
+
+
+<style>
+  #backTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;  
+      z-index: 99;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      background-image: url(/icons/backTop.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.5;
+      transition: transform 1s ease-in-out;
+  }
+</style>
+
+
+<script>
+  
+
+  function initScrollTop() {
+      
+      if (document.getElementById("backTopBtn")) {
+          return;
+      }
+      
+      
+      let btn = document.createElement("div");
+      btn.id = "backTopBtn";
+      btn.onclick = backToTop;
+      
+      
+      document.body.appendChild(btn);
+      
+      
+      window.onscroll = function() {
+          
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              btn.style.display = "block";
+          } else {
+              btn.style.display = "none";
+          }
+      };
+      
+      
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          btn.style.display = "block";
+      }
+  }
+
+  
+
+  function backToTop(){
+      window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  
+  if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initScrollTop);
+  } else {
+      initScrollTop();
+  }
+  
+  
+  document.addEventListener('pjax:complete', () => {
+      initScrollTop();
+  });
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+
+<script>
+
+function createMusic(name, artist, path, coverImage, lrcFile) {
+    return {
+        name: name,
+        artist: artist,
+        url: staticDir + path + '/' + name + '.mp3',
+        cover: staticDir + path + '/' + (coverImage || 'image.png'),
+        lrc: staticDir + path + '/' + (lrcFile || 'lrc.lrc')
+    };
+}
+const staticDir = "https:\/\/easthq.github.io\/" + "music/";
+const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    bgColor: 'rgba(0, 0, 0, 1.0)',
+    lrcType: 3,
+    audio: [
+        createMusic('Canon in D', 'Johann Pachelbel/Chris Snelling', 'Canon'),
+        createMusic('手写的从前', '周杰伦', '周杰伦/手写的从前'),
+        createMusic('晴天', '周杰伦', '周杰伦/晴天'),
+        createMusic('枫', '周杰伦', '周杰伦/枫'),
+        createMusic('珊瑚海', '周杰伦', '周杰伦/珊瑚海'),
+        createMusic('稻香', '周杰伦', '周杰伦/稻香'),
+        createMusic('花海', '周杰伦', '周杰伦/花海'),
+        createMusic('黑色幽默', '周杰伦', '周杰伦/黑色幽默'),
+        createMusic('蒲公英的约定', '周杰伦', '周杰伦/蒲公英的约定'),
+        createMusic('说好的幸福呢', '周杰伦', '周杰伦/说好的幸福呢'),
+        createMusic('听妈妈的话', '周杰伦', '周杰伦/听妈妈的话'),
+        {
+             name: 'Stay with me', 
+             artist: 'CHANYEOL, Punch', 
+             url: staticDir + 'Stay with me/Stay with me.mp3', 
+             cover: staticDir + 'Stay with me/cover.png', 
+             lrc: staticDir + 'Stay with me/lrc.lrc',  
+        },
+        {
+             name: '才二十三+爱爱爱+苏丽珍+好不容易+Love Song+为你写的歌', 
+             artist: '卢广仲', 
+             url: staticDir + '卢广仲/卢广仲-才二十三+爱爱爱+苏丽珍+好不容易+Love Song+为你写的歌.mp3', 
+             cover: staticDir + '卢广仲/cover.png', 
+             lrc: staticDir + '卢广仲/lrc.lrc',  
+        },
+    ],
+    
+    fixed: true
+});
+setTimeout(() => {
+  
+  if (ap && typeof ap.list !== 'undefined') {
+    ap.list.show(); 
+  }
+}, 500);
+</script>
+
+
+<style>
+   
+  #aplayer .aplayer-lrc {
+    height: 38px !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+
+  #aplayer .aplayer-lrc p {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+
+   
+  #aplayer .aplayer-lrc p.aplayer-lrc-current {
+    font-size: 16px !important;
+    font-weight: bold !important;
+  }
+
+   
+  #aplayer .aplayer-lrc p.aplayer-lrc-history,
+  #aplayer .aplayer-lrc p:not(.aplayer-lrc-current) {
+    font-size: 14px !important;
+  }
+
+   
+  #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-info {
+    
+    animation: fadeInUp 0.3s ease-out 0.1s both !important;
+  }
+
+  #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-controller {
+    animation: fadeInUp 0.3s ease-out 0.2s both !important;
+  }
+
+  #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-list {
+    animation: fadeInUp 0.3s ease-out 0.3s both !important;
+  }
+
+   
+  @keyframes fadeInUp {
+    from {
+      opacity: 1;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+   
+  #aplayer.aplayer-fixed .aplayer-body {
+    background-color: rgba(116, 115, 115, 0) !important;  
+         
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 10% !important;
+    overflow: hidden !important;
+    &:hover {
+      transform: translateX(2px); 
+  }
+  * {
+        -webkit-tap-highlight-color: transparent;
+        tap-highlight-color: transparent;
+    }
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-pic {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    transform: none !important;
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-info {
+    display: none !important;
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-button {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 10 !important;
+  }
+
+   
+   
+  
+     
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-miniswitcher {
+     
+    position: absolute !important;
+     
+    background-color: rgba(0, 0, 0, 0) !important;
+     
+  }
+
+   
+  #aplayer.aplayer-fixed.aplayer-narrow .aplayer-miniswitcher svg {
+    width: 14px !important;
+    height: 14px !important;
+    fill: white !important;
+    opacity: 0.9 !important;
+  }
+  
+   
+    #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-body {
+      width: auto !important;  
+      height: auto !important;  
+    }
+     
+    #aplayer.aplayer-fixed {
+      border-radius: 10px !important;
+      overflow: hidden !important;
+    }
+
+     
+    #aplayer.aplayer-fixed .aplayer-body {
+      border-radius: 10px !important;
+      overflow: hidden !important;
+      background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+     
+    #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-list li {
+      border-radius: 3px !important;
+      transition: all 0.2s ease !important;
+    }
+    
+
+  
+  @media screen and (max-width: 768px) {
+     
+    #aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-lrc {
+      display: none !important;
+    }
+    
+     
+    #aplayer.aplayer-fixed.aplayer-narrow .aplayer-lrc {
+      display: block !important;
+    }
+  }
+</style>
+
+
+<script>
+    
+
+    window.onbeforeunload = () => {
+        
+        const playInfo = {
+            index: ap.list.index,
+            currentTime: ap.audio.currentTime,
+            paused: ap.paused
+        };
+        localStorage.setItem("playInfo", JSON.stringify(playInfo));
+    };
+
+    
+
+    window.onload = () => {
+        
+        const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+        if (!playInfo) {
+            return;
+        }
+        
+        ap.list.switch(playInfo.index);
+        
+        setTimeout(() => {
+            
+            ap.seek(playInfo.currentTime);
+            
+            if (!playInfo.paused) {
+                ap.play()
+            }
+        }, 500);
+    };
+</script>
+
+
+<style>
+   
+  #dark-mode-toggle {
+    position: fixed !important;
+    bottom: 90px !important;  
+    left: 20px !important;
+    z-index: 1001 !important;
+    background: var(--sidebar-bg-color) !important;  
+    border-radius: 50% !important;
+    padding: 10px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+   
+  #dark-mode-toggle span {
+    display: none !important;
+  }
+
+   
+  #dark-mode-toggle svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+</style>
+
+
+<script>
+    async function renderKaTeX() {
+        
+        let katex = document.querySelector(".math-katex");
+        if (!katex) {
+            return;
+        }
+        
+        while (typeof renderMathInElement !== 'function') {
+            await delay(500);
+        }        
+        
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });
+    }
+    
+    
+
+    function delay(time) {
+        return new Promise(resolve => {
+            setTimeout(resolve, time)
+        })
+    }
+
+    document.addEventListener('pjax:complete', () => {
+        renderKaTeX();
+    })
+</script>
+
+    </body>
+</html>
