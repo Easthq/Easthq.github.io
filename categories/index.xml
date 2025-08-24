@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>smart fish</copyright>
-        <lastBuildDate>Sun, 24 Aug 2025 11:12:23 +0800</lastBuildDate><atom:link href="https://easthq.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 24 Aug 2025 23:12:54 +0800</lastBuildDate><atom:link href="https://easthq.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>HCIE</title>
+        <link>https://easthq.github.io/categories/hcie/</link>
+        <pubDate>Sun, 24 Aug 2025 23:06:20 +0800</pubDate>
+        
+        <guid>https://easthq.github.io/categories/hcie/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Hugo</title>
         <link>https://easthq.github.io/categories/hugo/</link>
         <pubDate>Sat, 23 Aug 2025 19:44:48 +0800</pubDate>
