@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://easthq.github.io/hugo-help/'>
 
-<link rel="stylesheet" href="/scss/style.min.071710fe34016555c6914aa35fb7c536a54aff6f45b8480eeafcb696a62b75cb.css"><meta property='og:title' content="Hugo修改记录">
+<link rel="stylesheet" href="/scss/style.min.34a460cfea4b490b562316d050b116a3855d84e0614d1711772537754dba9b22.css"><meta property='og:title' content="Hugo修改记录">
 <meta property='og:description' content="一些hugo使用技巧">
 <meta property='og:url' content='https://easthq.github.io/hugo-help/'>
 <meta property='og:site_name' content='咸鱼的小站'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:published_time' content='2025-08-16T18:40:51&#43;08:00'/><meta property='article:modified_time' content='2025-08-25T15:18:57&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:published_time' content='2025-08-16T18:40:51&#43;08:00'/><meta property='article:modified_time' content='2025-08-26T02:33:55&#43;08:00'/>
 <meta name="twitter:title" content="Hugo修改记录">
 <meta name="twitter:description" content="一些hugo使用技巧">
     <link rel="shortcut icon" href="/favicon.png" />
@@ -23,7 +23,7 @@
         (function() {
             const colorSchemeKey = 'StackColorScheme';
             if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "light");
+                localStorage.setItem(colorSchemeKey, "dark");
             }
         })();
     </script><script>
@@ -257,7 +257,10 @@
     <li><a href="#修改默认主题">修改默认主题</a>
       <ul>
         <li><a href="#修改默认模板为yaml格式">修改默认模板为yaml格式</a></li>
+        <li><a href="#修改网站背景">修改网站背景</a></li>
+        <li><a href="#全局卡片透明毛玻璃效果">全局卡片透明毛玻璃效果</a></li>
         <li><a href="#修改网站字体">修改网站字体</a></li>
+        <li><a href="#aplayer播放器暗色模式下去掉丑陋方框">aplayer播放器暗色模式下去掉丑陋方框</a></li>
         <li><a href="#增加bilibili视频可选播放进度增加自动播放是否静音等变量">增加bilibili视频可选播放进度，增加自动播放，是否静音等变量</a></li>
         <li><a href="#文章显示字数阅读量非pjax">文章显示字数，阅读量（非Pjax）</a></li>
         <li><a href="#修改categories和tags页面list模板样式">修改Categories和Tags页面list模板样式</a></li>
@@ -493,7 +496,7 @@
         <div class="article-lastmod">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-repeat"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12.5 21h-6.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v3" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h12" /><path d="M20 14l2 2h-3" /><path d="M20 18l2 -2" /><path d="M19 16a3 3 0 1 0 2 5.236" /></svg>
                 <time>
-                    2025-8-25 15:18
+                    2025-8-26 02:33
                 </time>
             </div>
             <div>
@@ -514,7 +517,7 @@
         <div>
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-word"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" /><path d="M9 12l1.333 5l1.667 -4l1.667 4l1.333 -5" /></svg> 
             <time class="article-words">
-                3045字
+                3313字
             </time>
         </div>
 
@@ -570,6 +573,76 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="修改网站背景">修改网站背景
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="sx">{{ (resources.Get &#34;background/bg.jpg&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">Permalink</span> <span class="p">}</span><span class="err">}</span><span class="o">)</span> <span class="nt">no-repeat</span> <span class="nt">center</span> <span class="nt">top</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">background-size</span><span class="o">:</span> <span class="nt">cover</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">background-attachment</span><span class="o">:</span> <span class="nt">fixed</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="err">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="全局卡片透明毛玻璃效果">全局卡片透明毛玻璃效果
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--card-background</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">:</span><span class="nd">root</span><span class="o">[</span><span class="nt">data-scheme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="o">]</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--card-background</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">66</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">article-page</span> <span class="p">.</span><span class="nc">main-article</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">section-card</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">widget--toc</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">card</span><span class="o">-</span><span class="n">background</span><span class="p">)</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">/*  保留模糊效果（可选） */</span>
+</span></span><span class="line"><span class="cl">  <span class="n">backdrop-filter</span><span class="p">:</span> <span class="nb">blur</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="c">/* 调整文章列表卡片的透明度 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">article-list</span> <span class="nt">article</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">card</span><span class="o">-</span><span class="n">background</span><span class="p">)</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h2 id="修改网站字体">修改网站字体
 </h2><p>需将字体文件放入<code>assets\font\CascadiaMono.ttf</code>下</p>
 <div class="highlight"><div class="chroma">
@@ -602,6 +675,57 @@
 </span></span><span class="line"><span class="cl">    <span class="o">--</span><span class="nx">code</span><span class="o">-</span><span class="nx">font</span><span class="o">-</span><span class="nx">family</span><span class="o">:</span> <span class="s1">&#39;CascadiaMono&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/style&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="aplayer播放器暗色模式下去掉丑陋方框">aplayer播放器暗色模式下去掉丑陋方框
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* 播放按钮、切换按钮、展开按钮统一去掉方框 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">aplayer</span> <span class="p">.</span><span class="nc">aplayer-button</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">aplayer</span> <span class="p">.</span><span class="nc">aplayer-button</span> <span class="nt">svg</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">aplayer</span> <span class="p">.</span><span class="nc">aplayer-miniswitcher</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">aplayer</span> <span class="p">.</span><span class="nc">aplayer-miniswitcher</span> <span class="nt">button</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">aplayer</span> <span class="p">.</span><span class="nc">aplayer-miniswitcher</span> <span class="nt">button</span> <span class="nt">svg</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="kc">none</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="kc">none</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">box-shadow</span><span class="p">:</span> <span class="kc">none</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fill</span><span class="p">:</span> <span class="kc">currentColor</span> <span class="cp">!important</span><span class="p">;</span> <span class="c">/* 保证图标显示 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">/* 专门处理暗色模式，避免灰底 */</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">html</span><span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="o">]</span> <span class="p">.</span><span class="nc">aplayer</span> <span class="p">.</span><span class="nc">aplayer-button</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">html</span><span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="o">]</span> <span class="p">.</span><span class="nc">aplayer</span> <span class="p">.</span><span class="nc">aplayer-button</span> <span class="nt">svg</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">html</span><span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="o">]</span> <span class="p">.</span><span class="nc">aplayer</span> <span class="p">.</span><span class="nc">aplayer-miniswitcher</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">html</span><span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="o">]</span> <span class="p">.</span><span class="nc">aplayer</span> <span class="p">.</span><span class="nc">aplayer-miniswitcher</span> <span class="nt">button</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">html</span><span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="o">]</span> <span class="p">.</span><span class="nc">aplayer</span> <span class="p">.</span><span class="nc">aplayer-miniswitcher</span> <span class="nt">button</span> <span class="nt">svg</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="kc">none</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="kc">none</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">box-shadow</span><span class="p">:</span> <span class="kc">none</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="增加bilibili视频可选播放进度增加自动播放是否静音等变量">增加bilibili视频可选播放进度，增加自动播放，是否静音等变量
@@ -1595,7 +1719,7 @@
 
 
         <span>
-            最后更新于 2025-8-25 15:18
+            最后更新于 2025-8-26 02:33
         </span>
     </section></footer>
 
@@ -1643,7 +1767,7 @@
     data-reactions-enabled="1"
     data-emit-metadata="0"
     data-input-position="top"
-    data-theme="light"
+    data-theme="transparent_dark"
     data-lang="zh-CN"
     data-loading=""
     crossorigin="anonymous"
@@ -1675,9 +1799,9 @@
 
         function handler() {
             if (document.documentElement.dataset.scheme === "light") {
-                setGiscusTheme('light');
+                setGiscusTheme('transparent_dark');
             } else {
-                setGiscusTheme('dark');
+                setGiscusTheme('transparent_dark');
             }
         }
     })();
@@ -1797,6 +1921,16 @@
     }());
 </script>
 
+<style>
+  body {
+    background: url(https://easthq.github.io/background/bg.jpg) no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 
 <script>
@@ -1856,7 +1990,7 @@
         script.setAttribute('data-reactions-enabled', '1');
         script.setAttribute('data-emit-metadata', '0');
         script.setAttribute('data-input-position', 'top');
-        script.setAttribute('data-theme', 'light');
+        script.setAttribute('data-theme', 'transparent_dark');
         script.setAttribute('data-lang', 'zh-CN');
         script.setAttribute('data-loading', '');
         script.setAttribute('crossorigin', 'anonymous');
@@ -2045,6 +2179,7 @@ const ap = new APlayer({
     container: document.getElementById('aplayer'),
     bgColor: 'rgba(0, 0, 0, 1.0)',
     lrcType: 3,
+    lrcType: 3,
     audio: [
         createMusic('Canon in D', 'Johann Pachelbel/Chris Snelling', 'Canon'),
         createMusic('手写的从前', '周杰伦', '周杰伦/手写的从前'),
@@ -2087,7 +2222,7 @@ setTimeout(() => {
 <style>
    
   #aplayer .aplayer-lrc {
-    height: 38px !important;
+    height: 39px !important;
     font-size: 16px !important;
     line-height: 20px !important;
     text-align: center !important;
@@ -2096,7 +2231,7 @@ setTimeout(() => {
 
   #aplayer .aplayer-lrc p {
     font-size: 14px !important;
-    line-height: 20px !important;
+    line-height: 1.32 !important;
   }
 
    
@@ -2169,6 +2304,34 @@ setTimeout(() => {
   #aplayer.aplayer-fixed.aplayer-narrow .aplayer-info {
     display: none !important;
   }
+
+   
+  .aplayer .aplayer-button,
+  .aplayer .aplayer-button svg,
+  .aplayer .aplayer-miniswitcher,
+  .aplayer .aplayer-miniswitcher button,
+  .aplayer .aplayer-miniswitcher button svg {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    fill: currentColor !important;  
+  }
+
+   
+  html[data-theme="dark"] .aplayer .aplayer-button,
+  html[data-theme="dark"] .aplayer .aplayer-button svg,
+  html[data-theme="dark"] .aplayer .aplayer-miniswitcher,
+  html[data-theme="dark"] .aplayer .aplayer-miniswitcher button,
+  html[data-theme="dark"] .aplayer .aplayer-miniswitcher button svg {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  
+
+
+
 
    
   #aplayer.aplayer-fixed.aplayer-narrow .aplayer-button {
@@ -2342,6 +2505,5 @@ setTimeout(() => {
         renderKaTeX();
     })
 </script>
-
     </body>
 </html>

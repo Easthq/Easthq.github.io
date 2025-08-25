@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://easthq.github.io/tags/pjax/'>
 
-<link rel="stylesheet" href="/scss/style.min.071710fe34016555c6914aa35fb7c536a54aff6f45b8480eeafcb696a62b75cb.css"><meta property='og:title' content="Tag: Pjax - 咸鱼的小站">
+<link rel="stylesheet" href="/scss/style.min.34a460cfea4b490b562316d050b116a3855d84e0614d1711772537754dba9b22.css"><meta property='og:title' content="Tag: Pjax - 咸鱼的小站">
 <meta property='og:description' content="今天又偷偷更新...">
 <meta property='og:url' content='https://easthq.github.io/tags/pjax/'>
 <meta property='og:site_name' content='咸鱼的小站'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-08-25T15:18:57&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-08-26T02:33:55&#43;08:00 '/>
 <meta name="twitter:title" content="Tag: Pjax - 咸鱼的小站">
 <meta name="twitter:description" content="今天又偷偷更新..."><link rel="alternate" type="application/rss&#43;xml" href="https://easthq.github.io/tags/pjax/index.xml">
     <link rel="shortcut icon" href="/favicon.png" />
@@ -21,7 +21,7 @@
         (function() {
             const colorSchemeKey = 'StackColorScheme';
             if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "light");
+                localStorage.setItem(colorSchemeKey, "dark");
             }
         })();
     </script><script>
@@ -528,6 +528,16 @@
     }());
 </script>
 
+<style>
+  body {
+    background: url(https://easthq.github.io/background/bg.jpg) no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 
 <script>
@@ -587,7 +597,7 @@
         script.setAttribute('data-reactions-enabled', '1');
         script.setAttribute('data-emit-metadata', '0');
         script.setAttribute('data-input-position', 'top');
-        script.setAttribute('data-theme', 'light');
+        script.setAttribute('data-theme', 'transparent_dark');
         script.setAttribute('data-lang', 'zh-CN');
         script.setAttribute('data-loading', '');
         script.setAttribute('crossorigin', 'anonymous');
@@ -776,6 +786,7 @@ const ap = new APlayer({
     container: document.getElementById('aplayer'),
     bgColor: 'rgba(0, 0, 0, 1.0)',
     lrcType: 3,
+    lrcType: 3,
     audio: [
         createMusic('Canon in D', 'Johann Pachelbel/Chris Snelling', 'Canon'),
         createMusic('手写的从前', '周杰伦', '周杰伦/手写的从前'),
@@ -818,7 +829,7 @@ setTimeout(() => {
 <style>
    
   #aplayer .aplayer-lrc {
-    height: 38px !important;
+    height: 39px !important;
     font-size: 16px !important;
     line-height: 20px !important;
     text-align: center !important;
@@ -827,7 +838,7 @@ setTimeout(() => {
 
   #aplayer .aplayer-lrc p {
     font-size: 14px !important;
-    line-height: 20px !important;
+    line-height: 1.32 !important;
   }
 
    
@@ -900,6 +911,34 @@ setTimeout(() => {
   #aplayer.aplayer-fixed.aplayer-narrow .aplayer-info {
     display: none !important;
   }
+
+   
+  .aplayer .aplayer-button,
+  .aplayer .aplayer-button svg,
+  .aplayer .aplayer-miniswitcher,
+  .aplayer .aplayer-miniswitcher button,
+  .aplayer .aplayer-miniswitcher button svg {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    fill: currentColor !important;  
+  }
+
+   
+  html[data-theme="dark"] .aplayer .aplayer-button,
+  html[data-theme="dark"] .aplayer .aplayer-button svg,
+  html[data-theme="dark"] .aplayer .aplayer-miniswitcher,
+  html[data-theme="dark"] .aplayer .aplayer-miniswitcher button,
+  html[data-theme="dark"] .aplayer .aplayer-miniswitcher button svg {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  
+
+
+
 
    
   #aplayer.aplayer-fixed.aplayer-narrow .aplayer-button {
@@ -1073,6 +1112,5 @@ setTimeout(() => {
         renderKaTeX();
     })
 </script>
-
     </body>
 </html>
