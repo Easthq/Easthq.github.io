@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>IPSec on 咸鱼的小站</title>
-        <link>https://easthq.github.io/categories/ipsec/</link>
+        <link>https://easthq.github.io/tags/ipsec/</link>
         <description>Recent content in IPSec on 咸鱼的小站</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>smart fish</copyright>
-        <lastBuildDate>Fri, 29 Aug 2025 18:13:16 +0800</lastBuildDate><atom:link href="https://easthq.github.io/categories/ipsec/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 30 Aug 2025 01:07:00 +0800</lastBuildDate><atom:link href="https://easthq.github.io/tags/ipsec/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>IPSec自动隧道</title>
         <link>https://easthq.github.io/ipsec%E8%87%AA%E5%8A%A8%E9%9A%A7%E9%81%93/</link>
         <pubDate>Fri, 29 Aug 2025 16:36:18 +0800</pubDate>
